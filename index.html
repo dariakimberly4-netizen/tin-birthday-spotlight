@@ -1,235 +1,44 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#10051f">
-<meta name="description" content="Break the website and release 43 birthday memories for Tin.">
-<title>Break the Website for Tin</title>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#070315"><meta name="description" content="Repair six broken planets and recover 43 birthday memories for Tin."><title>The Universe Forgot Tin’s Birthday</title>
 <style>
-:root{--ink:#fff7ea;--purple:#130622;--violet:#6d27a8;--pink:#ff5da9;--gold:#ffd78a;--paper:#f7efe7;--dark:#09020f}
-*{box-sizing:border-box}
-html{background:var(--dark);scroll-behavior:smooth}
-body{margin:0;min-height:100svh;overflow-x:hidden;background:var(--paper);color:#352a2d;font-family:Inter,Arial,sans-serif}
-button{font:inherit;touch-action:manipulation}
-button:focus-visible{outline:3px solid var(--gold);outline-offset:5px}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
-#fx{position:fixed;inset:0;width:100%;height:100%;z-index:25;pointer-events:none}
-.noise{position:fixed;inset:0;z-index:2;pointer-events:none;opacity:.075;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E")}
-.cover{position:relative;z-index:20;min-height:100svh;display:grid;grid-template-rows:auto 1fr auto;padding:clamp(20px,4vw,52px);background:radial-gradient(circle at 52% 42%,#fff 0,#f8efe7 32%,#ead8d0 100%);overflow:hidden;transition:opacity .7s,visibility .7s}
-.cover:before,.cover:after{content:"";position:absolute;inset:-15%;background:linear-gradient(115deg,transparent 47%,#a275791c 49%,transparent 51%);transform:translateX(-35%);pointer-events:none}
-.cover:after{transform:translateX(35%) rotate(90deg)}
-.topline,.bottomline{display:flex;justify-content:space-between;gap:16px;text-transform:uppercase;letter-spacing:.24em;font-size:clamp(9px,1vw,12px);color:#765d64}
-.cover-center{align-self:center;text-align:center;max-width:900px;margin:auto;position:relative}
-.kicker{margin:0 0 18px;text-transform:uppercase;letter-spacing:.35em;font-size:11px;color:#9d576d}
-h1{font:400 clamp(54px,9vw,124px)/.88 Georgia,serif;letter-spacing:-.065em;margin:0}
-h1 em{display:block;color:#9e536a;font-weight:400}
-.lead{font:italic clamp(17px,2vw,24px)/1.55 Georgia,serif;color:#745d65;max-width:560px;margin:28px auto}
-.break-btn,.final-btn,.reset-btn{border:0;border-radius:999px;min-height:58px;padding:0 30px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;cursor:pointer}
-.break-btn{background:#39222c;color:#fff8ef;box-shadow:0 14px 36px #4b25343b;position:relative;overflow:hidden}
-.break-btn:after{content:"";position:absolute;inset:-80%;background:linear-gradient(90deg,transparent,#fff7,transparent);transform:translateX(-70%) rotate(25deg);transition:transform .7s}
-.break-btn:hover:after{transform:translateX(70%) rotate(25deg)}
-.warning{display:block;margin-top:15px;font-size:11px;letter-spacing:.12em;color:#846a72}
-.cover.breaking{animation:quake .13s 11}
-.cover.breaking .cover-center{animation:splitCenter 1.7s .45s cubic-bezier(.5,0,.2,1) forwards}
-.cover.breaking .topline{animation:leaveLeft 1.3s .8s forwards}
-.cover.breaking .bottomline{animation:leaveRight 1.3s .8s forwards}
-body.revealed .cover{opacity:0;visibility:hidden;position:fixed;inset:0}
-@keyframes quake{25%{transform:translate(7px,-4px)}50%{transform:translate(-6px,5px)}75%{transform:translate(4px,3px)}}
-@keyframes splitCenter{40%{filter:none;transform:scale(1.03)}55%{filter:brightness(4)}100%{transform:scale(1.6);filter:blur(18px);opacity:0}}
-@keyframes leaveLeft{to{transform:translate(-110vw,-30vh) rotate(-18deg);opacity:0}}
-@keyframes leaveRight{to{transform:translate(110vw,30vh) rotate(20deg);opacity:0}}
-.world{position:fixed;inset:0;overflow:auto;overscroll-behavior:none;background:
-radial-gradient(circle at 50% 45%,#a73c9560 0,transparent 24%),
-radial-gradient(circle at 18% 20%,#4e39c955 0,transparent 30%),
-radial-gradient(circle at 82% 74%,#e0549160 0,transparent 25%),
-linear-gradient(145deg,#08010e,#19072d 48%,#09020f);color:var(--ink);opacity:0;visibility:hidden;transition:opacity 1.3s}
-body.revealed .world{opacity:1;visibility:visible}
-.stars{position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(circle,#fff 0 1px,transparent 1.5px);background-size:37px 37px;opacity:.16;animation:starDrift 22s linear infinite}
-@keyframes starDrift{to{background-position:74px 37px}}
-.world-head{position:fixed;z-index:10;top:0;left:0;right:0;padding:16px max(16px,4vw);display:flex;align-items:center;justify-content:space-between;gap:12px;background:linear-gradient(#0b0316e8,transparent);pointer-events:none}
-.world-title{font:italic clamp(21px,3vw,40px) Georgia,serif;letter-spacing:-.03em}
-.progress{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:#d8bddc}
-.progress strong{color:var(--gold);font-size:16px}
-.memory-space{position:relative;width:100%;height:max(100svh,820px);min-height:720px;overflow:hidden;perspective:1100px;touch-action:pan-y}
-.portal{position:absolute;left:50%;top:50%;width:min(62vw,650px);aspect-ratio:1;border-radius:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,#fff 0 2%,#ffd890 4%,#ff5cac42 22%,#7429b228 45%,transparent 68%);filter:blur(.2px);box-shadow:0 0 100px #d55cff35;animation:breathe 5s ease-in-out infinite;pointer-events:none}
-.portal:before,.portal:after{content:"";position:absolute;inset:12%;border:1px solid #ffd98a42;border-radius:48% 52% 45% 55%;animation:spin 18s linear infinite}
-.portal:after{inset:25%;animation-direction:reverse;animation-duration:12s}
-@keyframes breathe{50%{transform:translate(-50%,-50%) scale(1.08);filter:brightness(1.2)}}
-@keyframes spin{to{transform:rotate(360deg)}}
-.memory{--scale:1;position:absolute;left:var(--x);top:var(--y);width:clamp(72px,9vw,126px);aspect-ratio:.8;padding:6px 6px 19px;border:0;background:#fffaf3;box-shadow:0 10px 30px #0008,0 0 0 1px #fff9;transform:translate(-50%,-50%) rotate(var(--r)) scale(0);opacity:0;cursor:pointer;z-index:var(--z);transition:transform .25s,filter .25s;animation:escape 1.3s var(--d) cubic-bezier(.14,.75,.23,1.12) forwards,floaty var(--f) calc(var(--d) + 1.3s) ease-in-out infinite alternate}
-.memory img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;background:#321645}
-.memory span{position:absolute;bottom:5px;left:0;right:0;text-align:center;color:#6d5261;font:italic 9px Georgia,serif}
-.memory:hover,.memory:focus-visible{filter:brightness(1.1);z-index:50!important;transform:translate(-50%,-50%) rotate(0) scale(1.28)!important}
-.memory.opened{box-shadow:0 0 0 2px var(--gold),0 0 28px #ffd68a99}
-@keyframes escape{0%{left:50%;top:50%;opacity:0;transform:translate(-50%,-50%) rotate(0) scale(.05)}70%{opacity:1}100%{opacity:1;transform:translate(-50%,-50%) rotate(var(--r)) scale(var(--scale))}}
-@keyframes floaty{from{margin-top:-8px}to{margin-top:10px}}
-.instruction{position:fixed;z-index:11;left:50%;bottom:18px;transform:translateX(-50%);display:flex;align-items:center;gap:10px;width:min(94vw,720px);padding:10px 12px 10px 19px;border:1px solid #ffffff24;border-radius:999px;background:#160824d9;backdrop-filter:blur(14px);box-shadow:0 12px 40px #0008}
-.instruction p{margin:0;flex:1;font-size:13px;color:#e5d5e8}
-.final-btn{min-height:48px;padding:0 20px;background:linear-gradient(135deg,var(--gold),#ff8ec0);color:#32112d;font-size:10px}
-.crack{position:fixed;z-index:9;width:2px;height:38vh;left:50%;top:50%;background:linear-gradient(transparent,#fff,#d49cff,transparent);transform-origin:top;opacity:.26;pointer-events:none;box-shadow:0 0 8px #fff}
-dialog{padding:0;border:1px solid #ffffff35;border-radius:24px;width:min(92vw,920px);max-width:none;max-height:92svh;color:white;background:linear-gradient(145deg,#250b36f5,#0b0313f8);box-shadow:0 30px 120px #000;overflow:auto}
-dialog::backdrop{background:#050108dc;backdrop-filter:blur(9px)}
-.dialog-close{position:sticky;z-index:3;float:right;top:12px;margin:12px 12px -60px;width:48px;height:48px;border:1px solid #ffffff50;border-radius:50%;background:#13051cdd;color:#fff;font-size:26px;cursor:pointer}
-.wish{display:grid;grid-template-columns:1.05fr .95fr;min-height:540px}
-.wish-photo{margin:0;padding:16px;background:#fffaf2;transform:rotate(-1.5deg);align-self:center;margin-left:28px;box-shadow:0 16px 50px #0008}
-.wish-photo img{display:block;width:100%;height:min(60svh,530px);object-fit:contain;background:#14081e}
-.wish-copy{padding:70px 48px 50px;align-self:center}
-.wish-no{text-transform:uppercase;letter-spacing:.2em;font-size:11px;color:var(--gold)}
-.wish h2{font:italic clamp(38px,5vw,68px)/1 Georgia,serif;margin:16px 0 25px;color:#ffb7d7}
-.wish-text{font:clamp(18px,2vw,24px)/1.6 Georgia,serif;margin:0}
-.signature{margin-top:30px;color:#d7bfdc;font-style:italic}
-.dialog-nav{display:flex;align-items:center;justify-content:center;gap:16px;padding:0 20px 24px}
-.nav{width:54px;height:50px;border:1px solid #ffffff3d;border-radius:999px;background:#ffffff0c;color:#fff;font-size:22px;cursor:pointer}
-#counter{min-width:80px;text-align:center;color:#d8c6dd}
-.finale{position:fixed;z-index:80;inset:0;display:grid;place-items:center;padding:20px;color:white;background:radial-gradient(circle at 50% 45%,#f95bbf55,transparent 25%),linear-gradient(145deg,#08000c,#280740 60%,#08000c);opacity:0;visibility:hidden;transition:.8s}
-.finale.show{opacity:1;visibility:visible}
-.finale-card{text-align:center;max-width:900px;position:relative}
-.finale-kicker{text-transform:uppercase;letter-spacing:.35em;color:var(--gold);font-size:11px}
-.finale h2{font:400 clamp(64px,12vw,150px)/.82 Georgia,serif;letter-spacing:-.07em;margin:20px 0;color:#fff7e8;text-shadow:0 0 45px #ff77c988}
-.finale h2 em{display:block;font-weight:400;color:#ff9bcb}
-.finale-message{font:italic clamp(18px,2.4vw,28px)/1.55 Georgia,serif;color:#ead9ee;max-width:650px;margin:30px auto}
-.reset-btn{background:transparent;border:1px solid #ffd78a88;color:var(--gold)}
-.final-close{position:fixed;right:18px;top:18px;width:52px;height:52px;border-radius:50%;border:1px solid #fff5;background:#12051ccc;color:#fff;font-size:25px;cursor:pointer}
-.spark{position:absolute;width:7px;height:7px;background:var(--gold);border-radius:50%;left:50%;top:50%;animation:spark 2.2s var(--delay) ease-out infinite}
-@keyframes spark{from{transform:rotate(var(--a)) translateX(40px) scale(0);opacity:0}35%{opacity:1}to{transform:rotate(var(--a)) translateX(min(46vw,460px)) scale(1.2);opacity:0}}
-@media(max-width:700px){
-.cover{padding:20px 16px 24px}.topline{font-size:8px}.topline span:last-child{display:none}.bottomline{font-size:8px}
-h1{font-size:clamp(58px,18vw,84px)}.lead{font-size:17px;margin:24px auto}.break-btn{min-height:62px;width:min(100%,330px);padding:0 18px}
-.world-head{padding:12px 14px}.world-title{font-size:22px;max-width:58%}.progress{font-size:9px}.progress strong{font-size:14px}
-.memory-space{height:max(100svh,720px)}.memory{width:clamp(60px,18vw,88px);padding:4px 4px 15px}.memory span{font-size:7px}
-.instruction{bottom:10px;padding:8px 8px 8px 15px}.instruction p{font-size:11px;line-height:1.25}.final-btn{padding:0 14px;min-height:52px}
-.wish{display:block}.wish-photo{margin:66px auto 0;width:calc(100% - 38px);padding:10px}.wish-photo img{height:42svh}.wish-copy{text-align:center;padding:30px 22px 24px}.wish h2{font-size:40px;margin:10px 0 16px}.wish-text{font-size:18px}.signature{margin-top:17px}.dialog-nav{padding-bottom:18px}
-.finale h2{font-size:clamp(65px,22vw,98px)}.finale-message{font-size:18px}.final-close{width:48px;height:48px}
-}
-@media(prefers-reduced-motion:reduce){
-*,*:before,*:after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}
-.memory{opacity:1;transform:translate(-50%,-50%) rotate(var(--r)) scale(var(--scale))}
-}
-</style>
-</head>
-<body>
-<canvas id="fx" aria-hidden="true"></canvas><div class="noise" aria-hidden="true"></div>
-<section class="cover" id="cover">
-  <div class="topline"><span>A birthday page behaving perfectly</span><span>43 memories contained safely</span></div>
-  <div class="cover-center">
-    <p class="kicker">Everything is completely under control</p>
-    <h1>For you,<em>Tin.</em></h1>
-    <p class="lead">A quiet little birthday page. Please do not press the suspicious button.</p>
-    <button class="break-btn" id="breakBtn">Break the website</button>
-    <small class="warning">Tap once. There is no going back.</small>
-  </div>
-  <div class="bottomline"><span>Made with love</span><span>Definitely not unstable</span></div>
-</section>
-
-<main class="world" id="world" aria-hidden="true">
-  <div class="stars" aria-hidden="true"></div>
-  <header class="world-head"><div class="world-title">The memories escaped.</div><div class="progress"><strong id="opened">0</strong> / 43 found</div></header>
-  <section class="memory-space" id="memorySpace" aria-label="Forty-three floating birthday memories">
-    <div class="portal" aria-hidden="true"></div>
-  </section>
-  <div class="instruction"><p>Tap a real photo to open its birthday wish.</p><button class="final-btn" id="finalBtn">Secret finale</button></div>
-</main>
-
-<dialog id="viewer" aria-labelledby="wishTitle">
-  <button class="dialog-close" id="dialogClose" aria-label="Close memory">×</button>
-  <div class="wish">
-    <figure class="wish-photo"><img id="fullImage" alt=""></figure>
-    <div class="wish-copy"><div class="wish-no" id="wishNo"></div><h2 id="wishTitle">Dear Tin,</h2><p class="wish-text" id="wishText"></p><p class="signature">With love, on your birthday. ♡</p></div>
-  </div>
-  <div class="dialog-nav"><button class="nav" id="prev" aria-label="Previous memory">←</button><span id="counter"></span><button class="nav" id="next" aria-label="Next memory">→</button></div>
-</dialog>
-
-<section class="finale" id="finale" aria-hidden="true">
-  <button class="final-close" id="finalClose" aria-label="Close finale">×</button>
-  <div class="finale-card" id="finaleCard">
-    <p class="finale-kicker">The website broke. The love did not.</p>
-    <h2>Happy Birthday,<em>Tin.</em></h2>
-    <p class="finale-message">Forty-three memories escaped just to remind you: you are deeply loved, joyfully celebrated, and impossible to contain in one ordinary page.</p>
-    <button class="reset-btn" id="resetBtn">Break it again</button>
-  </div>
-</section>
-
-<p class="sr" id="status" aria-live="polite"></p>
+:root{--gold:#ffd37d;--pink:#ff71bd;--white:#fffaf0;--space:#070315}*{box-sizing:border-box}html,body{margin:0;min-height:100%;overflow:hidden;background:var(--space);color:var(--white);font-family:Arial,sans-serif}button{font:inherit;touch-action:manipulation}button:focus-visible{outline:3px solid var(--gold);outline-offset:4px}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+.stars,.stars:before,.stars:after{position:fixed;inset:0;content:"";pointer-events:none;background-image:radial-gradient(circle,#fff 0 1px,transparent 1.5px);background-size:43px 43px;opacity:.2}.stars:before{background-size:77px 77px;transform:translate(21px,13px);opacity:.35}.stars:after{background-size:119px 119px;transform:translate(37px,31px);opacity:.55}.nebula{position:fixed;inset:-20%;pointer-events:none;background:radial-gradient(ellipse at 20% 25%,#49288a88,transparent 30%),radial-gradient(ellipse at 80% 72%,#b82e845e,transparent 28%),radial-gradient(ellipse at 52% 46%,#2b62a94c,transparent 32%);filter:blur(40px);animation:nebula 15s ease-in-out infinite alternate}@keyframes nebula{to{transform:translate(3%,-2%) scale(1.07)}}
+.opening{position:fixed;inset:0;z-index:40;display:grid;place-items:center;padding:24px;text-align:center;background:radial-gradient(circle at 50% 42%,#39165c 0,transparent 28%),#070315bb;transition:1s}.opening.gone{opacity:0;visibility:hidden}.alarm{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid #ff7abf55;border-radius:999px;color:#ff9dce;text-transform:uppercase;letter-spacing:.2em;font-size:10px}.alarm i{width:8px;height:8px;border-radius:50%;background:#ff4c9e;box-shadow:0 0 16px #ff4c9e;animation:pulse 1s infinite alternate}@keyframes pulse{to{opacity:.3;transform:scale(.7)}}h1{font:400 clamp(52px,9vw,122px)/.84 Georgia,serif;letter-spacing:-.065em;margin:22px auto;max-width:1050px}h1 em{display:block;font-weight:400;color:var(--pink);text-shadow:0 0 42px #ff4ba96b}.opening p{font:italic clamp(17px,2vw,24px)/1.55 Georgia,serif;color:#d9cbe8;max-width:650px;margin:0 auto 27px}.start,.repair{border-radius:999px;font-weight:900;text-transform:uppercase;letter-spacing:.12em;cursor:pointer}.start{min-height:62px;padding:0 32px;border:0;background:linear-gradient(135deg,var(--gold),#ff8ccc);color:#30132d;box-shadow:0 0 45px #ff75ba4d}.opening small{display:block;margin-top:14px;color:#aa98c2}
+.universe{position:fixed;inset:0;opacity:0;visibility:hidden;transition:1s}body.started .universe{opacity:1;visibility:visible}.hud{position:absolute;z-index:15;left:0;right:0;top:0;display:flex;justify-content:space-between;align-items:center;padding:15px max(15px,3vw);background:linear-gradient(#070315ef,transparent)}.brand{font:italic clamp(18px,2.3vw,31px) Georgia,serif}.meter{text-align:right;text-transform:uppercase;letter-spacing:.1em;color:#bfafd1;font-size:10px}.meter strong{display:block;color:var(--gold);font-size:16px}.stage{position:absolute;inset:0;overflow:hidden;perspective:1000px;touch-action:pan-y}.scene{position:absolute;inset:0;display:grid;place-items:center;padding:85px 25px 125px;opacity:0;visibility:hidden;transform:translateX(36%) scale(.82);transition:.75s}.scene.active{opacity:1;visibility:visible;transform:none}.info{position:absolute;z-index:4;left:max(18px,5vw);top:14%;max-width:320px}.chapter{color:var(--gold);text-transform:uppercase;letter-spacing:.24em;font-size:10px}.info h2{font:400 clamp(38px,5vw,72px)/.9 Georgia,serif;letter-spacing:-.05em;margin:12px 0}.info p{color:#cbbbd8;line-height:1.5;font-size:14px}
+.planet{--c1:#7654ce;--c2:#211043;position:relative;width:min(45vw,470px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 32% 27%,#fff8 0 1%,transparent 3%),radial-gradient(circle at 32% 28%,var(--c1),var(--c2) 58%,#08020e 76%);box-shadow:inset -45px -35px 70px #0009,0 0 75px color-mix(in srgb,var(--c1) 58%,transparent);transition:1s}.planet:before{content:"";position:absolute;inset:-12%;border:2px solid #ffffff21;border-left-color:transparent;border-right-color:#ffd47d55;border-radius:50%;transform:rotate(-18deg)}.planet:after{content:"";position:absolute;left:12%;top:7%;width:54%;height:85%;border-right:4px solid #090112;border-radius:45%;transform:rotate(29deg);filter:drop-shadow(10px 0 4px #f4c8ff55)}.planet.fixed{filter:brightness(1.35) saturate(1.2);transform:scale(1.05);box-shadow:0 0 125px color-mix(in srgb,var(--c1) 80%,transparent)}.planet.fixed:after{opacity:.15}
+.memory{position:absolute;z-index:5;left:var(--x);top:var(--y);width:clamp(66px,8vw,110px);aspect-ratio:.8;padding:5px 5px 18px;border:0;background:#fffaf3;box-shadow:0 12px 30px #0009;transform:translate(-50%,-50%) rotate(var(--r));cursor:pointer;transition:.35s;animation:drift var(--speed) ease-in-out infinite alternate}@keyframes drift{to{margin-top:10px}}.memory img{width:100%;height:100%;object-fit:cover;display:block;background:#231139;pointer-events:none}.memory span{position:absolute;bottom:4px;left:0;right:0;text-align:center;color:#5c4960;font:italic 8px Georgia,serif}.memory:hover,.memory:focus-visible{z-index:30;transform:translate(-50%,-55%) rotate(0) scale(1.25)}.memory.recovered{opacity:.28;filter:sepia(1) saturate(3);transform:translate(-50%,-50%) scale(.72)}
+.repair{position:absolute;z-index:17;left:50%;bottom:100px;transform:translateX(-50%);min-height:55px;padding:0 24px;border:1px solid #ffd98a88;background:#130923df;color:var(--gold);backdrop-filter:blur(12px)}.repair.done{background:linear-gradient(135deg,var(--gold),#ff89ca);color:#31122d;border:0}.nav{position:absolute;z-index:18;left:50%;bottom:22px;transform:translateX(-50%);display:flex;align-items:center;gap:13px;padding:9px 12px;border:1px solid #ffffff20;border-radius:999px;background:#0d061bdc;backdrop-filter:blur(14px)}.nav>button{width:51px;height:51px;border:1px solid #ffffff30;border-radius:50%;background:#ffffff08;color:#fff;font-size:21px;cursor:pointer}.dots{display:flex;gap:7px}.dots button{width:9px;height:9px;border:0;border-radius:50%;padding:0;background:#ffffff32;cursor:pointer}.dots button.active{background:var(--gold);box-shadow:0 0 15px var(--gold)}.count{min-width:52px;text-align:center;color:#bfaed0;font-size:11px}.toast{position:absolute;z-index:50;left:50%;top:85px;transform:translate(-50%,-15px);padding:11px 17px;border-radius:999px;background:#fff8ea;color:#30152f;font-weight:bold;font-size:12px;opacity:0;transition:.35s}.toast.show{opacity:1;transform:translate(-50%,0)}
+dialog{padding:0;border:1px solid #ffffff35;border-radius:24px;width:min(92vw,900px);max-width:none;max-height:92svh;color:#fff;background:linear-gradient(145deg,#21103bf8,#080311f8);box-shadow:0 28px 120px #000;overflow:auto}dialog::backdrop{background:#030108df;backdrop-filter:blur(9px)}.close{position:sticky;z-index:3;float:right;top:12px;margin:12px 12px -60px;width:48px;height:48px;border:1px solid #ffffff45;border-radius:50%;background:#0b0415dd;color:#fff;font-size:25px;cursor:pointer}.wish{display:grid;grid-template-columns:1.05fr .95fr;min-height:540px}.wish figure{margin:70px 0 45px 30px;padding:12px 12px 34px;background:#fffaf3;transform:rotate(-1.5deg);align-self:center}.wish figure img{display:block;width:100%;height:min(58svh,500px);object-fit:contain;background:#160a27}.wish figcaption{text-align:center;color:#6f5b72;font:italic 14px Georgia,serif;margin-top:11px}.wishcopy{padding:80px 45px 45px;align-self:center}.wishno{color:var(--gold);text-transform:uppercase;letter-spacing:.18em;font-size:10px}.wish h3{font:italic clamp(38px,5vw,64px)/1 Georgia,serif;color:#ff9dce;margin:15px 0 23px}.wishtext{font:clamp(18px,2vw,24px)/1.6 Georgia,serif}.signature{color:#cdbfd7;font-style:italic}.wishnav{display:flex;justify-content:center;align-items:center;gap:18px;padding:0 20px 24px}.wishnav button{width:54px;height:50px;border:1px solid #ffffff35;border-radius:50%;background:transparent;color:#fff;font-size:21px}.wishnav span{min-width:75px;text-align:center;color:#bfaed0}
+.finale{position:fixed;z-index:80;inset:0;display:grid;place-items:center;padding:20px;background:radial-gradient(circle at 50% 46%,#b4378c5f,transparent 25%),linear-gradient(145deg,#05000a,#1d0636 62%,#07010e);opacity:0;visibility:hidden;transition:1s}.finale.show{opacity:1;visibility:visible}.cake{position:relative;width:min(60vw,500px);height:min(32vw,265px);min-width:280px;min-height:150px;border-radius:50% 50% 45% 45%;background:linear-gradient(#ff9dcc 0 20%,#ffe5b6 20% 42%,#a95bea 42% 60%,#ffe5b6 60% 80%,#ff8fc7 80%);box-shadow:0 0 120px #ff6ebd99,inset -25px -20px 50px #6d255b66;animation:glow 2s infinite alternate}@keyframes glow{to{filter:brightness(1.2);box-shadow:0 0 170px #ffd47daa}}.candles{position:absolute;left:8%;right:8%;top:-78px;display:flex;justify-content:space-around}.candle{width:12px;height:80px;border-radius:7px 7px 2px 2px;background:repeating-linear-gradient(45deg,#fff 0 8px,#ff72b9 8px 16px);position:relative}.candle:before{content:"";position:absolute;width:18px;height:28px;left:-3px;top:-24px;border-radius:50%;background:radial-gradient(circle at 50% 65%,#fff 0 10%,#ffe479 35%,#ff7d2d 65%,transparent 68%);filter:drop-shadow(0 0 12px #ffd45f)}.finalcopy{position:absolute;inset:0;z-index:3;display:grid;place-content:center;text-align:center;padding:20px;pointer-events:none}.finalcopy small{color:var(--gold);text-transform:uppercase;letter-spacing:.28em}.finalcopy h2{font:400 clamp(55px,10vw,128px)/.82 Georgia,serif;letter-spacing:-.07em;margin:20px 0;text-shadow:0 0 35px #ff79c2}.finalcopy h2 em{display:block;color:#ff9dce;font-weight:400}.finalcopy p{font:italic clamp(16px,2vw,23px)/1.55 Georgia,serif;color:#e4d5eb}.finalclose{position:absolute;right:18px;top:18px;width:52px;height:52px;border:1px solid #ffffff4d;border-radius:50%;background:#10051bcc;color:#fff;font-size:24px;z-index:5}
+@media(max-width:760px){h1{font-size:clamp(52px,17vw,80px)}.opening p{font-size:17px}.start{width:min(100%,340px)}.hud{padding:12px 14px}.brand{font-size:18px;max-width:54%}.meter strong{font-size:14px}.scene{padding:100px 8px 150px}.info{top:80px;left:17px;max-width:60%}.info h2{font-size:34px;margin:8px 0}.info p{display:none}.planet{width:min(70vw,355px);margin-top:30px}.memory{width:clamp(58px,17vw,82px);padding:4px 4px 14px}.repair{bottom:96px;width:min(88vw,340px)}.wish{display:block}.wish figure{width:calc(100% - 34px);margin:70px auto 0;padding:9px 9px 27px}.wish figure img{height:40svh}.wishcopy{text-align:center;padding:27px 22px 22px}.wish h3{font-size:40px;margin:10px 0 15px}.wishtext{font-size:18px}.cake{width:82vw;height:44vw}.finalcopy h2{font-size:clamp(58px,18vw,92px)}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}.memory{animation:none}}
+</style></head><body><div class="stars"></div><div class="nebula"></div>
+<section class="opening" id="opening"><div><div class="alarm"><i></i> Cosmic emergency detected</div><h1>The universe forgot<em>Tin’s birthday.</em></h1><p>Six worlds are broken. Forty-three memories are missing. Repair reality before the last birthday star disappears.</p><button class="start" id="start">Repair reality</button><small>Tap once to enter the damaged universe.</small></div></section>
+<main class="universe" id="universe" aria-hidden="true"><header class="hud"><div class="brand">Operation: Remember Tin</div><div class="meter"><strong><span id="recovered">0</span> / 43 memories</strong><span id="fixedCount">0 of 6 worlds repaired</span></div></header><section class="stage" id="stage" aria-label="Broken birthday planets"></section><button class="repair" id="repair">Recover this planet</button><nav class="nav" aria-label="Planet navigation"><button id="prev" aria-label="Previous planet">←</button><div class="dots" id="dots"></div><span class="count" id="planetCount"></span><button id="next" aria-label="Next planet">→</button></nav><div class="toast" id="toast"></div></main>
+<dialog id="viewer"><button class="close" id="close" aria-label="Close memory">×</button><div class="wish"><figure><img id="fullImage" alt=""><figcaption id="caption"></figcaption></figure><div class="wishcopy"><div class="wishno" id="wishNo"></div><h3>Dear Tin,</h3><p class="wishtext" id="wishText"></p><p class="signature">Recovered with love. ♡</p></div></div><div class="wishnav"><button id="wishPrev" aria-label="Previous memory">←</button><span id="wishCounter"></span><button id="wishNext" aria-label="Next memory">→</button></div></dialog>
+<section class="finale" id="finale" aria-hidden="true"><button class="finalclose" id="finalClose" aria-label="Close birthday universe">×</button><div class="cake"><div class="candles"><i class="candle"></i><i class="candle"></i><i class="candle"></i><i class="candle"></i><i class="candle"></i><i class="candle"></i></div></div><div class="finalcopy"><small>Reality restored · Birthday remembered</small><h2>Happy Birthday,<em>Tin.</em></h2><p>The universe may forget dates. The people who love you never will.</p></div></section><p class="sr" id="status" aria-live="polite"></p>
 <script id="photo-data" type="application/json">[{"src":"./photos/01.jpg","name":"01-FB_IMG_1788030107315.jpg","dedication":"Tin, may your birthday feel as warm as the love gathered around you."},{"src":"./photos/02.jpg","name":"02-FB_IMG_1788029923955.jpg","dedication":"Here’s to another year of laughter that stays with you long after the moment ends."},{"src":"./photos/03.jpg","name":"03-FB_IMG_1788029919328.jpg","dedication":"May you always find time for the little things that make you happy."},{"src":"./photos/04.jpg","name":"04-FB_IMG_1788029913854.jpg","dedication":"Wishing you adventures worth remembering and people worth sharing them with."},{"src":"./photos/05.jpg","name":"05-FB_IMG_1788029908141.jpg","dedication":"May this new chapter bring you peaceful mornings and joyful surprises."},{"src":"./photos/06.jpg","name":"06-FB_IMG_1788029903986.jpg","dedication":"Today is a lovely reason to celebrate the person you are, just as you are."},{"src":"./photos/07.jpg","name":"07-FB_IMG_1788029899079.jpg","dedication":"Here’s to the ordinary days that become your favorite memories."},{"src":"./photos/08.jpg","name":"08-FB_IMG_1788029891043.jpg","dedication":"May love meet you in a thousand small and unexpected ways this year."},{"src":"./photos/09.jpg","name":"09-FB_IMG_1788029887828.jpg","dedication":"Wishing you the courage to follow whatever makes your heart feel alive."},{"src":"./photos/10.jpg","name":"10-FB_IMG_1788029883137.jpg","dedication":"May your birthday remind you how much you mean to the people around you."},{"src":"./photos/11.jpg","name":"02-Messenger_creation_C2B13145-B5B3-4A17-AF5A-A1C13941B7DA.jpeg","dedication":"Here’s to more pictures taken between fits of laughter."},{"src":"./photos/12.jpg","name":"03-Messenger_creation_EC56E805-E1C3-4BBF-990C-D9926DDDED48.jpeg","dedication":"May the coming year give you beautiful places to go and a happy place to return to."},{"src":"./photos/13.jpg","name":"04-Messenger_creation_5478B7E2-D719-4442-8AE1-013F3C74F6BF.jpeg","dedication":"Wishing you friendships that feel easy, honest, and full of joy."},{"src":"./photos/14.jpg","name":"05-Messenger_creation_66291FE3-04B0-4C79-A491-C146C1E7137A.jpeg","dedication":"May you never run out of reasons to smile or people to smile with."},{"src":"./photos/15.jpg","name":"06-Messenger_creation_067869E9-C002-4EFE-9825-4E1DB6A84FE9.jpeg","dedication":"Tin, you deserve a birthday filled with the things you love most."},{"src":"./photos/16.jpg","name":"07-Messenger_creation_369CE94E-969A-4ACA-96CD-C3A62F10823B.jpeg","dedication":"Here’s to the next adventure, the next good story, and the next unforgettable day."},{"src":"./photos/17.jpg","name":"08-Messenger_creation_D38E2949-88A9-4EE3-8A32-47CF4A9FCAC9.jpeg","dedication":"May your heart stay curious and your days leave room for a little fun."},{"src":"./photos/18.jpg","name":"09-Messenger_creation_47C8F2F5-EEDA-4F2D-BBB4-0AB869AE14EE.jpeg","dedication":"Wishing you moments so happy you forget to check the time."},{"src":"./photos/19.jpg","name":"10-Messenger_creation_3A18FDFD-3624-48C0-B9DA-176118A2F2F2.jpeg","dedication":"May this year be kind to you in ways you have not even imagined."},{"src":"./photos/20.jpg","name":"01-Messenger_creation_36B655C8-D5B2-4250-B8FB-9C64C6A5E3B8.jpeg","dedication":"Here’s to celebrations big and small, and finding joy in both."},{"src":"./photos/21.jpg","name":"02-Messenger_creation_AACCEEA7-A033-40C4-8B7D-C82F028FA726.jpeg","dedication":"May you feel appreciated today and on all the quiet days in between."},{"src":"./photos/22.jpg","name":"03-Messenger_creation_6423F8AD-B94A-450D-A689-0A81AEA1BBB3.jpeg","dedication":"Wishing you a year with more happy reunions and fewer hurried goodbyes."},{"src":"./photos/23.jpg","name":"04-Messenger_creation_C0C9C28A-B4C9-4B78-9419-89A4294E13D0.jpeg","dedication":"May your dreams have room to grow, one hopeful step at a time."},{"src":"./photos/24.jpg","name":"05-Messenger_creation_A8D57332-3373-427C-BFBB-6EAA32E8BBFA.jpeg","dedication":"Here’s to taking the scenic route whenever life gives you the chance."},{"src":"./photos/25.jpg","name":"06-Messenger_creation_6BBBDDBA-AAF6-4938-8A3A-DB12681F1E90.jpeg","dedication":"May the people you love keep filling your world with warmth."},{"src":"./photos/26.jpg","name":"07-Messenger_creation_216308B7-9858-4BAB-9E1C-88E5A38053B3.jpeg","dedication":"Tin, may your birthday be the beginning of a particularly lovely chapter."},{"src":"./photos/27.jpg","name":"08-Messenger_creation_FCAD150D-ECC8-4F6D-B08B-1E61AA071B4E.jpeg","dedication":"Wishing you the freedom to rest, recharge, and enjoy your own beautiful pace."},{"src":"./photos/28.jpg","name":"09-Messenger_creation_DC07EFB3-E25C-4E77-ACF2-52902C95E676.jpeg","dedication":"May a favorite song, a good meal, and familiar laughter never be far away."},{"src":"./photos/29.jpg","name":"10-Messenger_creation_067FFE0F-37ED-4098-B5AD-9D1AD3AD26B4.jpeg","dedication":"Here’s to new memories that will make you say, “We should do that again.”"},{"src":"./photos/30.jpg","name":"01-Messenger_creation_0A9ECEE4-9853-4AA6-85A2-D64C5B027F1A.jpeg","dedication":"May you keep collecting moments that feel like sunshine."},{"src":"./photos/31.jpg","name":"02-Messenger_creation_1F5121EC-C542-429A-A76E-AA62EE870BF0.jpeg","dedication":"Wishing you love that feels steady and happiness that feels simple."},{"src":"./photos/32.jpg","name":"03-Messenger_creation_CE0E3BEC-34C6-4D7E-919A-CDD65113D563.jpeg","dedication":"May the next year bring you something wonderful to look forward to."},{"src":"./photos/34.jpg","name":"05-Messenger_creation_F0104CC2-1EA5-436A-8F41-1CF23723748B.jpeg","dedication":"May your days hold enough wonder to keep surprising you."},{"src":"./photos/35.jpg","name":"06-Messenger_creation_0D20FA72-B44C-4C84-B0DE-3632725C3DFD.jpeg","dedication":"Tin, may you always have someone beside you to celebrate the good news."},{"src":"./photos/36.jpg","name":"07-Messenger_creation_D9F27D5D-D428-4F03-BDE1-67BB3DA9E2C4.jpeg","dedication":"Wishing you moments of pride in how far you have come."},{"src":"./photos/37.jpg","name":"08-Messenger_creation_E4B8FF19-828A-486F-921E-8ACC70435A7C.jpeg","dedication":"May you find beauty in the familiar and joy in trying something new."},{"src":"./photos/38.jpg","name":"09-Messenger_creation_F13E383D-8CA4-4B84-887A-5B5E6FE7076D.jpeg","dedication":"Here’s to a heart full of gratitude and a calendar with room for happiness."},{"src":"./photos/39.jpg","name":"10-Messenger_creation_890270A4-91B9-42FA-89D3-C99E8189B1DB.jpeg","dedication":"May this birthday leave you feeling loved, celebrated, and wonderfully yourself."},{"src":"./photos/40.jpg","name":"01-FB_IMG_1788075807247.jpg","dedication":"Wishing you more carefree afternoons and adventures under the stars."},{"src":"./photos/41.jpg","name":"02-FB_IMG_1788075739480.jpg","dedication":"May the road ahead bring good company and beautiful possibilities."},{"src":"./photos/42.jpg","name":"03-FB_IMG_1788075729417.jpg","dedication":"Here’s to loving your life in all its little, imperfect, wonderful details."},{"src":"./photos/43.jpg","name":"04-FB_IMG_1788075713280.jpg","dedication":"Happy Birthday, Tin. Forty-three photographs, one heart, and so much love for you."},{"src":"./photos/44.jpg","name":"1000018449.jpg","dedication":"Tin, may every new chapter give you the strength to pause, breathe, and keep moving forward in your own beautiful way."}]</script>
 <script>
-(function(){
-'use strict';
+(function(){'use strict';
 var photos=JSON.parse(document.getElementById('photo-data').textContent);
-var body=document.body,cover=document.getElementById('cover'),world=document.getElementById('world');
-var space=document.getElementById('memorySpace'),viewer=document.getElementById('viewer'),finale=document.getElementById('finale');
-var canvas=document.getElementById('fx'),ctx=canvas.getContext('2d'),reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
-var cards=[],seen=new Set(),current=0,cracks=[],particles=[],raf=0;
-function rnd(i,s){var x=Math.sin(i*127.1+s*311.7)*43758.5453;return x-Math.floor(x)}
-function layout(i){
-  var mobile=innerWidth<700, cols=mobile?6:9, row=Math.floor(i/cols), col=i%cols;
-  var usable=mobile?88:92, x=6+(col+.5)*usable/cols+(rnd(i,2)-.5)*(mobile?7:5);
-  var rows=Math.ceil(photos.length/cols), y=12+(row+.5)*76/rows+(rnd(i,4)-.5)*7;
-  if(i%11===0){x=50+(rnd(i,8)-.5)*24;y=50+(rnd(i,9)-.5)*25}
-  return{x:x,y:y};
-}
-function buildCards(){
-  photos.forEach(function(photo,i){
-    var p=layout(i),b=document.createElement('button'),img=document.createElement('img'),label=document.createElement('span');
-    b.className='memory';b.setAttribute('aria-label','Open birthday memory '+(i+1)+' of '+photos.length);
-    b.style.setProperty('--x',p.x+'%');b.style.setProperty('--y',p.y+'%');b.style.setProperty('--r',(-15+rnd(i,3)*30)+'deg');
-    b.style.setProperty('--d',(0.12+(i%12)*.065)+'s');b.style.setProperty('--f',(3.6+rnd(i,7)*3.2)+'s');
-    b.style.setProperty('--z',String(2+Math.floor(rnd(i,5)*7)));b.style.setProperty('--scale',String(.78+rnd(i,6)*.35));
-    img.src=photo.src;img.alt='Tin birthday photograph '+(i+1);img.loading=i<12?'eager':'lazy';img.decoding='async';img.draggable=false;
-    label.textContent='memory '+String(i+1).padStart(2,'0');b.append(img,label);b.addEventListener('click',function(){openWish(i);addCrack()});
-    space.appendChild(b);cards.push(b);
-  });
-}
-function sizeCanvas(){canvas.width=innerWidth*devicePixelRatio;canvas.height=innerHeight*devicePixelRatio;canvas.style.width=innerWidth+'px';canvas.style.height=innerHeight+'px';ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0)}
-function fracture(){
-  sizeCanvas();var cx=innerWidth/2,cy=innerHeight/2;
-  for(var i=0;i<23;i++){var a=(Math.PI*2/23)*i+(rnd(i,9)-.5)*.25,len=Math.max(innerWidth,innerHeight)*(.3+rnd(i,2)*.62);cracks.push({x:cx,y:cy,a:a,len:len,p:0,s:.035+rnd(i,5)*.04,branches:rnd(i,7)>.35})}
-  for(var j=0;j<90;j++){particles.push({x:cx,y:cy,vx:(rnd(j,1)-.5)*24,vy:(rnd(j,2)-.5)*22-3,life:1,size:2+rnd(j,3)*7})}
-  drawFX();
-}
-function drawFX(){
-  ctx.clearRect(0,0,innerWidth,innerHeight);
-  ctx.lineCap='round';
-  cracks.forEach(function(c,k){c.p=Math.min(1,c.p+c.s);var ex=c.x+Math.cos(c.a)*c.len*c.p,ey=c.y+Math.sin(c.a)*c.len*c.p;ctx.beginPath();ctx.moveTo(c.x,c.y);ctx.lineTo(ex,ey);ctx.strokeStyle='rgba(255,255,255,'+(0.92-c.p*.45)+')';ctx.lineWidth=k%4===0?3:1.2;ctx.shadowColor='#e6b4ff';ctx.shadowBlur=8;ctx.stroke();if(c.branches&&c.p>.45){var bx=c.x+Math.cos(c.a)*c.len*.45,by=c.y+Math.sin(c.a)*c.len*.45;ctx.beginPath();ctx.moveTo(bx,by);ctx.lineTo(bx+Math.cos(c.a+.75)*c.len*.18,by+Math.sin(c.a+.75)*c.len*.18);ctx.stroke()}});ctx.shadowBlur=0;
-  particles.forEach(function(p){p.x+=p.vx;p.y+=p.vy;p.vy+=.35;p.life-=.018;ctx.fillStyle='rgba(255,215,138,'+Math.max(0,p.life)+')';ctx.fillRect(p.x,p.y,p.size,p.size)});
-  particles=particles.filter(function(p){return p.life>0});
-  if(cracks.some(function(c){return c.p<1})||particles.length)raf=requestAnimationFrame(drawFX);else setTimeout(function(){ctx.clearRect(0,0,innerWidth,innerHeight)},800);
-}
-function breakSite(){
-  if(cover.classList.contains('breaking'))return;
-  cover.classList.add('breaking');document.getElementById('status').textContent='The page is cracking open.';
-  if(!reduced)fracture();
-  setTimeout(function(){body.classList.add('revealed');world.setAttribute('aria-hidden','false');document.getElementById('status').textContent='The hidden birthday universe is open. Forty-three memories are floating around you.'},reduced?0:1950);
-}
-function addCrack(){
-  if(reduced)return;var line=document.createElement('i');line.className='crack';line.style.left=(12+Math.random()*76)+'%';line.style.top=(15+Math.random()*55)+'%';line.style.transform='rotate('+(-70+Math.random()*140)+'deg)';world.appendChild(line);setTimeout(function(){line.remove()},1300);
-}
-function renderWish(){
-  var p=photos[current];document.getElementById('fullImage').src=p.src;document.getElementById('fullImage').alt='Tin birthday photograph '+(current+1);
-  document.getElementById('wishNo').textContent='Escaped memory '+String(current+1).padStart(2,'0');
-  document.getElementById('wishText').textContent=p.dedication;document.getElementById('counter').textContent=(current+1)+' / '+photos.length;
-  seen.add(current);cards[current].classList.add('opened');document.getElementById('opened').textContent=seen.size;
-}
-function openWish(i){current=i;renderWish();viewer.showModal()}
-function step(n){current=(current+n+photos.length)%photos.length;renderWish()}
-function showFinale(){
-  finale.classList.add('show');finale.setAttribute('aria-hidden','false');
-  if(!document.querySelector('.spark')){for(var i=0;i<36;i++){var s=document.createElement('i');s.className='spark';s.style.setProperty('--a',(i*10)+'deg');s.style.setProperty('--delay',((i%9)*.11)+'s');document.getElementById('finaleCard').appendChild(s)}}
-}
-function resetAll(){finale.classList.remove('show');finale.setAttribute('aria-hidden','true');body.classList.remove('revealed');cover.classList.remove('breaking');world.setAttribute('aria-hidden','true');scrollTo(0,0)}
-document.getElementById('breakBtn').addEventListener('click',breakSite);
-document.getElementById('dialogClose').addEventListener('click',function(){viewer.close()});
-document.getElementById('prev').addEventListener('click',function(){step(-1)});
-document.getElementById('next').addEventListener('click',function(){step(1)});
-document.getElementById('finalBtn').addEventListener('click',showFinale);
-document.getElementById('finalClose').addEventListener('click',function(){finale.classList.remove('show');finale.setAttribute('aria-hidden','true')});
-document.getElementById('resetBtn').addEventListener('click',resetAll);
-viewer.addEventListener('click',function(e){if(e.target===viewer)viewer.close()});
-viewer.addEventListener('keydown',function(e){if(e.key==='ArrowLeft')step(-1);if(e.key==='ArrowRight')step(1)});
-var sx=0;viewer.addEventListener('touchstart',function(e){sx=e.changedTouches[0].clientX},{passive:true});viewer.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>55)step(dx>0?-1:1)},{passive:true});
-space.addEventListener('pointermove',function(e){if(reduced)return;var dx=(e.clientX/innerWidth-.5)*10,dy=(e.clientY/innerHeight-.5)*8;space.style.transform='translate('+dx+'px,'+dy+'px)'});
-space.addEventListener('pointerleave',function(){space.style.transform='none'});
-addEventListener('resize',sizeCanvas,{passive:true});buildCards();sizeCanvas();
+var worlds=[
+{name:'The Silent Moon',desc:'Its light vanished when seven memories fell through the cracks.',c1:'#8665df',c2:'#221042'},
+{name:'The Rose Nebula',desc:'A storm scattered its memories into impossible pieces.',c1:'#ef6bad',c2:'#551443'},
+{name:'The Ocean World',desc:'The tides stopped moving when its stories were forgotten.',c1:'#43b9d5',c2:'#102b58'},
+{name:'The Golden Ruins',desc:'An ancient birthday signal waits beneath the broken surface.',c1:'#e7ac4d',c2:'#593016'},
+{name:'The Midnight Garden',desc:'Its flowers turned to stars and refused to come home.',c1:'#7ccc8b',c2:'#153927'},
+{name:'The Last Birthday Star',desc:'Repair this final world and awaken the impossible cake planet.',c1:'#ff72bd',c2:'#5d1856'}];
+var stage=document.getElementById('stage'),viewer=document.getElementById('viewer'),recovered=new Set(),fixed=new Set(),cards=[],currentWorld=0,currentMemory=0,startX=0;
+var desktop=[[22,28,-8],[76,25,7],[16,62,6],[84,60,-8],[30,78,-5],[70,80,6],[49,18,-2],[50,72,3]],mobile=[[13,36,-8],[85,34,8],[14,67,7],[86,68,-7],[34,80,-5],[68,81,6],[50,25,-2],[50,69,3]];
+function ids(w){var a=[],s=w*7,e=w===5?photos.length:Math.min(s+7,photos.length);for(var i=s;i<e;i++)a.push(i);return a}
+function build(){worlds.forEach(function(w,wi){var scene=document.createElement('article');scene.className='scene'+(wi===0?' active':'');var info=document.createElement('div');info.className='info';info.innerHTML='<span class="chapter">Broken world '+String(wi+1).padStart(2,'0')+'</span><h2>'+w.name+'</h2><p>'+w.desc+'</p>';var planet=document.createElement('div');planet.className='planet';planet.style.setProperty('--c1',w.c1);planet.style.setProperty('--c2',w.c2);scene.append(info,planet);ids(wi).forEach(function(id,j){var p=(innerWidth<760?mobile:desktop)[j],b=document.createElement('button'),im=document.createElement('img'),sp=document.createElement('span');b.className='memory';b.style.setProperty('--x',p[0]+'%');b.style.setProperty('--y',p[1]+'%');b.style.setProperty('--r',p[2]+'deg');b.style.setProperty('--speed',(3.4+(id%5)*.55)+'s');b.setAttribute('aria-label','Recover memory '+(id+1)+' of '+photos.length);im.src=photos[id].src;im.alt='Tin birthday photograph '+(id+1);im.loading=id<8?'eager':'lazy';im.draggable=false;sp.textContent='memory '+String(id+1).padStart(2,'0');b.append(im,sp);b.addEventListener('click',function(){recover(id);openWish(id)});scene.appendChild(b);cards[id]=b});stage.appendChild(scene);var d=document.createElement('button');d.setAttribute('aria-label','Go to planet '+(wi+1));if(wi===0)d.className='active';d.onclick=function(){show(wi)};document.getElementById('dots').appendChild(d)});show(0)}
+function show(n){currentWorld=(n+6)%6;document.querySelectorAll('.scene').forEach(function(s,i){s.classList.toggle('active',i===currentWorld)});document.querySelectorAll('.dots button').forEach(function(d,i){d.classList.toggle('active',i===currentWorld)});document.getElementById('planetCount').textContent=(currentWorld+1)+' / 6';updateButton()}
+function recover(id){if(recovered.has(id))return;recovered.add(id);cards[id].classList.add('recovered');update();var t=document.getElementById('toast');t.textContent='Memory '+String(id+1).padStart(2,'0')+' restored';t.classList.add('show');setTimeout(function(){t.classList.remove('show')},1000)}
+function repair(){ids(currentWorld).forEach(recover);fixed.add(currentWorld);document.querySelectorAll('.scene')[currentWorld].querySelector('.planet').classList.add('fixed');update();if(currentWorld===5&&recovered.size===photos.length)setTimeout(finale,800);else setTimeout(function(){show(currentWorld+1)},600)}
+function update(){document.getElementById('recovered').textContent=recovered.size;document.getElementById('fixedCount').textContent=fixed.size+' of 6 worlds repaired';updateButton()}
+function updateButton(){var done=ids(currentWorld).every(function(i){return recovered.has(i)}),b=document.getElementById('repair');b.classList.toggle('done',done);b.textContent=done?(currentWorld===5?'Ignite birthday planet':'Planet repaired · continue'):'Recover this planet'}
+function openWish(i){currentMemory=i;renderWish();viewer.showModal()}function renderWish(){var p=photos[currentMemory];document.getElementById('fullImage').src=p.src;document.getElementById('fullImage').alt='Tin birthday photograph '+(currentMemory+1);document.getElementById('caption').textContent='Recovered memory '+String(currentMemory+1).padStart(2,'0');document.getElementById('wishNo').textContent='Message from the universe · '+String(currentMemory+1).padStart(2,'0');document.getElementById('wishText').textContent=p.dedication;document.getElementById('wishCounter').textContent=(currentMemory+1)+' / '+photos.length}function step(n){currentMemory=(currentMemory+n+photos.length)%photos.length;recover(currentMemory);renderWish()}
+function finale(){var f=document.getElementById('finale');f.classList.add('show');f.setAttribute('aria-hidden','false')}
+document.getElementById('start').onclick=function(){document.body.classList.add('started');document.getElementById('opening').classList.add('gone');document.getElementById('universe').setAttribute('aria-hidden','false')};document.getElementById('prev').onclick=function(){show(currentWorld-1)};document.getElementById('next').onclick=function(){show(currentWorld+1)};document.getElementById('repair').onclick=function(){var done=ids(currentWorld).every(function(i){return recovered.has(i)});if(done){if(currentWorld===5)finale();else show(currentWorld+1)}else repair()};document.getElementById('close').onclick=function(){viewer.close()};document.getElementById('wishPrev').onclick=function(){step(-1)};document.getElementById('wishNext').onclick=function(){step(1)};document.getElementById('finalClose').onclick=function(){var f=document.getElementById('finale');f.classList.remove('show');f.setAttribute('aria-hidden','true')};viewer.onclick=function(e){if(e.target===viewer)viewer.close()};stage.addEventListener('touchstart',function(e){startX=e.changedTouches[0].clientX},{passive:true});stage.addEventListener('touchend',function(e){var x=e.changedTouches[0].clientX-startX;if(Math.abs(x)>65)show(currentWorld+(x<0?1:-1))},{passive:true});build();
 })();
-</script>
-</body></html>
+</script></body></html>
