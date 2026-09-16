@@ -1,29 +1,235 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f5eee6"><meta name="description" content="43 photographs gather into a heart for Tin. Touch a memory to reveal a birthday dedication."><title>Tin’s Polaroid Heart</title>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#10051f">
+<meta name="description" content="Break the website and release 43 birthday memories for Tin.">
+<title>Break the Website for Tin</title>
 <style>
-:root{color-scheme:light;--ink:#49352f;--soft:#8c7164;--rose:#99564f;--paper:#f5eee6}*{box-sizing:border-box}body{margin:0;color:var(--ink);background:radial-gradient(ellipse at 50% 47%,#edd6cf66,transparent 63%),var(--paper);font-family:Arial,Helvetica,sans-serif}button{font:inherit;cursor:pointer;touch-action:manipulation}button:focus-visible{outline:3px solid var(--rose);outline-offset:5px}main{min-height:100svh;display:flex;flex-direction:column;align-items:center;padding:22px 22px 18px}.masthead{width:100%;display:flex;justify-content:space-between;align-items:center;font-size:9px;text-transform:uppercase;letter-spacing:.22em;color:var(--soft)}.edition{border-bottom:1px solid #c9ad99;padding-bottom:6px}.hero{text-align:center;margin-top:25px}.eyebrow{font-size:9px;text-transform:uppercase;letter-spacing:.28em;color:var(--rose);margin:0 0 12px}h1{font:normal clamp(40px,4.5vw,64px)/1.08 Georgia,serif;letter-spacing:-.045em;margin:0}h1 em{font-weight:normal;color:var(--rose)}.subtitle{font-size:12px;line-height:1.65;color:var(--soft);margin:11px 0 0}.stage-wrap{width:100%;flex:1;display:flex;align-items:center;justify-content:center;min-height:310px;margin:8px 0}.stage{position:relative;width:min(86vw,calc((100svh - 262px)*1.10),820px);min-width:300px;aspect-ratio:1.1;isolation:isolate}.polaroid{position:absolute;left:var(--sx);top:var(--sy);width:9.8%;aspect-ratio:.79;transform:translate(-50%,-50%) rotate(var(--sr));background:#fffdf7;border:0;padding:.65% .65% 0;box-shadow:0 2px 3px #4b302029,0 8px 18px #5d372016;transition:left 2.3s cubic-bezier(.3,0,.2,1),top 2.3s cubic-bezier(.3,0,.2,1),transform 2.3s cubic-bezier(.3,0,.2,1),box-shadow .25s;transition-delay:var(--delay);color:#8b6655;z-index:var(--layer)}.polaroid img{width:100%;height:80%;object-fit:cover;display:block;background:#e7dbd0;pointer-events:none}.polaroid span{height:20%;display:flex;align-items:center;justify-content:center;font:italic clamp(5px,.65vw,9px) Georgia,serif;pointer-events:none;white-space:nowrap}.stage.gathered .polaroid{left:var(--hx);top:var(--hy);transform:translate(-50%,-50%) rotate(var(--hr))}.stage .polaroid:hover,.stage .polaroid:focus-visible{z-index:100;box-shadow:0 4px 9px #4b302044,0 12px 22px #5d372033}.stage.gathered .polaroid:hover,.stage.gathered .polaroid:focus-visible{transform:translate(-50%,-55%) rotate(0deg) scale(1.2)}.polaroid.seen span::after{content:' · ♡';color:var(--rose)}.under-heart{text-align:center}.hint{font:italic 15px Georgia,serif;color:var(--soft);margin:3px 0 16px}.controls{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}.btn{min-height:46px;padding:0 23px;background:transparent;border:1px solid #bd9b89;border-radius:30px;color:var(--ink);font-size:11px;letter-spacing:.03em}.btn.main{background:var(--rose);border-color:var(--rose);color:#fffaf3}.btn:hover{box-shadow:0 3px 12px #7041321a}.footer{width:100%;display:flex;justify-content:space-between;gap:10px;margin-top:24px;color:var(--soft);font-size:9px;letter-spacing:.08em}.footer strong{font-weight:normal;color:var(--rose)}dialog{padding:0;border:1px solid #bba28e;border-radius:8px;background:var(--paper);color:var(--ink);width:min(94vw,900px);max-width:none;max-height:94svh;box-shadow:0 20px 100px #0005}dialog::backdrop{background:#271a16cf;backdrop-filter:blur(7px)}.dialog-head{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;border-bottom:1px solid #d8c6b6}.dialog-head span{font-size:9px;letter-spacing:.17em;text-transform:uppercase;color:var(--soft)}.close{width:44px;height:44px;border:1px solid #c7ad9b;border-radius:50%;background:transparent;color:var(--ink);font-size:26px}.memory-content{display:grid;grid-template-columns:1.1fr 1fr;align-items:center;gap:32px;padding:26px}.large-polaroid{margin:0;padding:10px 10px 0;background:#fffdf8;box-shadow:0 4px 15px #68402c26;transform:rotate(-2deg);min-width:0}.large-polaroid img{width:100%;height:48svh;max-height:450px;object-fit:contain;display:block;background:#eee7df}.large-polaroid figcaption{font:italic 17px Georgia,serif;text-align:center;padding:17px 0;color:var(--soft)}.dedication .eyebrow{margin-bottom:16px}.dedication h2{font:normal 36px Georgia,serif;margin:0 0 17px;color:var(--rose)}#dedication-text{font:20px/1.65 Georgia,serif;margin:0}.signature{font:italic 15px Georgia,serif;color:var(--soft);margin:22px 0 0}.dialog-nav{display:flex;justify-content:center;align-items:center;gap:24px;padding:13px 16px 18px}.nav{height:46px;min-width:60px;border:1px solid #bd9b89;border-radius:25px;background:transparent;color:var(--ink);font-size:24px}.counter{font-size:11px;letter-spacing:.1em;min-width:70px;text-align:center}.noscript{padding:20px;text-align:center}.status{height:0;overflow:hidden}
-@media(max-width:650px){main{padding:18px 12px 16px}.masthead{font-size:7px;letter-spacing:.12em}.hero{margin-top:35px}h1{font-size:42px}.subtitle{font-size:11px;max-width:290px;margin:12px auto 0}.stage{width:94vw;min-width:280px;max-width:500px}.stage-wrap{margin:26px 0 24px;min-height:290px}.polaroid{min-width:30px}.polaroid span{font-size:5px}.hint{font-size:14px}.footer{margin-top:28px;font-size:8px}.memory-content{display:block;padding:17px 20px}.large-polaroid{width:min(100%,340px);margin:auto}.large-polaroid img{height:37svh}.large-polaroid figcaption{padding:11px 0;font-size:14px}.dedication{text-align:center;margin-top:24px}.dedication .eyebrow{font-size:8px;margin-bottom:7px}.dedication h2{font-size:26px;margin-bottom:10px}#dedication-text{font-size:17px;line-height:1.5}.signature{margin-top:12px;font-size:12px}.dialog-head{padding:8px 14px}.dialog-nav{padding-top:0}dialog{max-height:95svh;overflow:auto}.btn{min-height:48px;padding:0 18px}}@media(max-height:550px) and (min-width:651px){main{min-height:760px}.stage{width:520px}.large-polaroid img{height:40svh}.memory-content{padding:12px;gap:20px}#dedication-text{font-size:17px}}@media(prefers-reduced-motion:reduce){.polaroid{transition:none!important}.large-polaroid{transform:none}}
-</style></head><body><main><div class="masthead"><span>A little collection of love</span><span class="edition">The Tin birthday edition</span></div><header class="hero"><p class="eyebrow">43 photographs · one heart</p><h1>All our love,<br><em>for you, Tin.</em></h1><p class="subtitle">Little moments, gathered together.<br>A birthday keepsake made with love.</p></header><section class="stage-wrap" aria-label="Photographs gathering into a heart"><div class="stage" id="stage"></div></section><div class="under-heart"><p class="hint">Touch a photo. There’s a wish waiting inside.</p><div class="controls"><button class="btn main" id="arrange">Gather into a heart</button><button class="btn" id="browse">Open a dedication ↗</button></div></div><footer class="footer"><span>Every memory has a place here.</span><span id="progress"><strong>0 / 43</strong> wishes opened</span></footer><p id="status" class="status" aria-live="polite"></p><noscript><p class="noscript">Please enable JavaScript to explore Tin’s photo heart.</p></noscript></main>
-<dialog id="viewer" aria-labelledby="dedication-title"><div class="dialog-head"><span>A birthday wish, just for you</span><button class="close" id="close" aria-label="Close dedication">×</button></div><div class="memory-content" id="swipe-area"><figure class="large-polaroid"><img id="full-image" alt=""><figcaption id="caption">A little moment to keep.</figcaption></figure><div class="dedication"><p class="eyebrow" id="wish-number"></p><h2 id="dedication-title">Dear Tin,</h2><p id="dedication-text"></p><p class="signature">With love, on your birthday. ♡</p></div></div><div class="dialog-nav"><button class="nav" id="previous" aria-label="Previous dedication">←</button><span class="counter" id="counter" aria-live="polite"></span><button class="nav" id="next" aria-label="Next dedication">→</button></div></dialog>
+:root{--ink:#fff7ea;--purple:#130622;--violet:#6d27a8;--pink:#ff5da9;--gold:#ffd78a;--paper:#f7efe7;--dark:#09020f}
+*{box-sizing:border-box}
+html{background:var(--dark);scroll-behavior:smooth}
+body{margin:0;min-height:100svh;overflow-x:hidden;background:var(--paper);color:#352a2d;font-family:Inter,Arial,sans-serif}
+button{font:inherit;touch-action:manipulation}
+button:focus-visible{outline:3px solid var(--gold);outline-offset:5px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+#fx{position:fixed;inset:0;width:100%;height:100%;z-index:25;pointer-events:none}
+.noise{position:fixed;inset:0;z-index:2;pointer-events:none;opacity:.075;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E")}
+.cover{position:relative;z-index:20;min-height:100svh;display:grid;grid-template-rows:auto 1fr auto;padding:clamp(20px,4vw,52px);background:radial-gradient(circle at 52% 42%,#fff 0,#f8efe7 32%,#ead8d0 100%);overflow:hidden;transition:opacity .7s,visibility .7s}
+.cover:before,.cover:after{content:"";position:absolute;inset:-15%;background:linear-gradient(115deg,transparent 47%,#a275791c 49%,transparent 51%);transform:translateX(-35%);pointer-events:none}
+.cover:after{transform:translateX(35%) rotate(90deg)}
+.topline,.bottomline{display:flex;justify-content:space-between;gap:16px;text-transform:uppercase;letter-spacing:.24em;font-size:clamp(9px,1vw,12px);color:#765d64}
+.cover-center{align-self:center;text-align:center;max-width:900px;margin:auto;position:relative}
+.kicker{margin:0 0 18px;text-transform:uppercase;letter-spacing:.35em;font-size:11px;color:#9d576d}
+h1{font:400 clamp(54px,9vw,124px)/.88 Georgia,serif;letter-spacing:-.065em;margin:0}
+h1 em{display:block;color:#9e536a;font-weight:400}
+.lead{font:italic clamp(17px,2vw,24px)/1.55 Georgia,serif;color:#745d65;max-width:560px;margin:28px auto}
+.break-btn,.final-btn,.reset-btn{border:0;border-radius:999px;min-height:58px;padding:0 30px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;cursor:pointer}
+.break-btn{background:#39222c;color:#fff8ef;box-shadow:0 14px 36px #4b25343b;position:relative;overflow:hidden}
+.break-btn:after{content:"";position:absolute;inset:-80%;background:linear-gradient(90deg,transparent,#fff7,transparent);transform:translateX(-70%) rotate(25deg);transition:transform .7s}
+.break-btn:hover:after{transform:translateX(70%) rotate(25deg)}
+.warning{display:block;margin-top:15px;font-size:11px;letter-spacing:.12em;color:#846a72}
+.cover.breaking{animation:quake .13s 11}
+.cover.breaking .cover-center{animation:splitCenter 1.7s .45s cubic-bezier(.5,0,.2,1) forwards}
+.cover.breaking .topline{animation:leaveLeft 1.3s .8s forwards}
+.cover.breaking .bottomline{animation:leaveRight 1.3s .8s forwards}
+body.revealed .cover{opacity:0;visibility:hidden;position:fixed;inset:0}
+@keyframes quake{25%{transform:translate(7px,-4px)}50%{transform:translate(-6px,5px)}75%{transform:translate(4px,3px)}}
+@keyframes splitCenter{40%{filter:none;transform:scale(1.03)}55%{filter:brightness(4)}100%{transform:scale(1.6);filter:blur(18px);opacity:0}}
+@keyframes leaveLeft{to{transform:translate(-110vw,-30vh) rotate(-18deg);opacity:0}}
+@keyframes leaveRight{to{transform:translate(110vw,30vh) rotate(20deg);opacity:0}}
+.world{position:fixed;inset:0;overflow:auto;overscroll-behavior:none;background:
+radial-gradient(circle at 50% 45%,#a73c9560 0,transparent 24%),
+radial-gradient(circle at 18% 20%,#4e39c955 0,transparent 30%),
+radial-gradient(circle at 82% 74%,#e0549160 0,transparent 25%),
+linear-gradient(145deg,#08010e,#19072d 48%,#09020f);color:var(--ink);opacity:0;visibility:hidden;transition:opacity 1.3s}
+body.revealed .world{opacity:1;visibility:visible}
+.stars{position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(circle,#fff 0 1px,transparent 1.5px);background-size:37px 37px;opacity:.16;animation:starDrift 22s linear infinite}
+@keyframes starDrift{to{background-position:74px 37px}}
+.world-head{position:fixed;z-index:10;top:0;left:0;right:0;padding:16px max(16px,4vw);display:flex;align-items:center;justify-content:space-between;gap:12px;background:linear-gradient(#0b0316e8,transparent);pointer-events:none}
+.world-title{font:italic clamp(21px,3vw,40px) Georgia,serif;letter-spacing:-.03em}
+.progress{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:#d8bddc}
+.progress strong{color:var(--gold);font-size:16px}
+.memory-space{position:relative;width:100%;height:max(100svh,820px);min-height:720px;overflow:hidden;perspective:1100px;touch-action:pan-y}
+.portal{position:absolute;left:50%;top:50%;width:min(62vw,650px);aspect-ratio:1;border-radius:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,#fff 0 2%,#ffd890 4%,#ff5cac42 22%,#7429b228 45%,transparent 68%);filter:blur(.2px);box-shadow:0 0 100px #d55cff35;animation:breathe 5s ease-in-out infinite;pointer-events:none}
+.portal:before,.portal:after{content:"";position:absolute;inset:12%;border:1px solid #ffd98a42;border-radius:48% 52% 45% 55%;animation:spin 18s linear infinite}
+.portal:after{inset:25%;animation-direction:reverse;animation-duration:12s}
+@keyframes breathe{50%{transform:translate(-50%,-50%) scale(1.08);filter:brightness(1.2)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.memory{--scale:1;position:absolute;left:var(--x);top:var(--y);width:clamp(72px,9vw,126px);aspect-ratio:.8;padding:6px 6px 19px;border:0;background:#fffaf3;box-shadow:0 10px 30px #0008,0 0 0 1px #fff9;transform:translate(-50%,-50%) rotate(var(--r)) scale(0);opacity:0;cursor:pointer;z-index:var(--z);transition:transform .25s,filter .25s;animation:escape 1.3s var(--d) cubic-bezier(.14,.75,.23,1.12) forwards,floaty var(--f) calc(var(--d) + 1.3s) ease-in-out infinite alternate}
+.memory img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;background:#321645}
+.memory span{position:absolute;bottom:5px;left:0;right:0;text-align:center;color:#6d5261;font:italic 9px Georgia,serif}
+.memory:hover,.memory:focus-visible{filter:brightness(1.1);z-index:50!important;transform:translate(-50%,-50%) rotate(0) scale(1.28)!important}
+.memory.opened{box-shadow:0 0 0 2px var(--gold),0 0 28px #ffd68a99}
+@keyframes escape{0%{left:50%;top:50%;opacity:0;transform:translate(-50%,-50%) rotate(0) scale(.05)}70%{opacity:1}100%{opacity:1;transform:translate(-50%,-50%) rotate(var(--r)) scale(var(--scale))}}
+@keyframes floaty{from{margin-top:-8px}to{margin-top:10px}}
+.instruction{position:fixed;z-index:11;left:50%;bottom:18px;transform:translateX(-50%);display:flex;align-items:center;gap:10px;width:min(94vw,720px);padding:10px 12px 10px 19px;border:1px solid #ffffff24;border-radius:999px;background:#160824d9;backdrop-filter:blur(14px);box-shadow:0 12px 40px #0008}
+.instruction p{margin:0;flex:1;font-size:13px;color:#e5d5e8}
+.final-btn{min-height:48px;padding:0 20px;background:linear-gradient(135deg,var(--gold),#ff8ec0);color:#32112d;font-size:10px}
+.crack{position:fixed;z-index:9;width:2px;height:38vh;left:50%;top:50%;background:linear-gradient(transparent,#fff,#d49cff,transparent);transform-origin:top;opacity:.26;pointer-events:none;box-shadow:0 0 8px #fff}
+dialog{padding:0;border:1px solid #ffffff35;border-radius:24px;width:min(92vw,920px);max-width:none;max-height:92svh;color:white;background:linear-gradient(145deg,#250b36f5,#0b0313f8);box-shadow:0 30px 120px #000;overflow:auto}
+dialog::backdrop{background:#050108dc;backdrop-filter:blur(9px)}
+.dialog-close{position:sticky;z-index:3;float:right;top:12px;margin:12px 12px -60px;width:48px;height:48px;border:1px solid #ffffff50;border-radius:50%;background:#13051cdd;color:#fff;font-size:26px;cursor:pointer}
+.wish{display:grid;grid-template-columns:1.05fr .95fr;min-height:540px}
+.wish-photo{margin:0;padding:16px;background:#fffaf2;transform:rotate(-1.5deg);align-self:center;margin-left:28px;box-shadow:0 16px 50px #0008}
+.wish-photo img{display:block;width:100%;height:min(60svh,530px);object-fit:contain;background:#14081e}
+.wish-copy{padding:70px 48px 50px;align-self:center}
+.wish-no{text-transform:uppercase;letter-spacing:.2em;font-size:11px;color:var(--gold)}
+.wish h2{font:italic clamp(38px,5vw,68px)/1 Georgia,serif;margin:16px 0 25px;color:#ffb7d7}
+.wish-text{font:clamp(18px,2vw,24px)/1.6 Georgia,serif;margin:0}
+.signature{margin-top:30px;color:#d7bfdc;font-style:italic}
+.dialog-nav{display:flex;align-items:center;justify-content:center;gap:16px;padding:0 20px 24px}
+.nav{width:54px;height:50px;border:1px solid #ffffff3d;border-radius:999px;background:#ffffff0c;color:#fff;font-size:22px;cursor:pointer}
+#counter{min-width:80px;text-align:center;color:#d8c6dd}
+.finale{position:fixed;z-index:80;inset:0;display:grid;place-items:center;padding:20px;color:white;background:radial-gradient(circle at 50% 45%,#f95bbf55,transparent 25%),linear-gradient(145deg,#08000c,#280740 60%,#08000c);opacity:0;visibility:hidden;transition:.8s}
+.finale.show{opacity:1;visibility:visible}
+.finale-card{text-align:center;max-width:900px;position:relative}
+.finale-kicker{text-transform:uppercase;letter-spacing:.35em;color:var(--gold);font-size:11px}
+.finale h2{font:400 clamp(64px,12vw,150px)/.82 Georgia,serif;letter-spacing:-.07em;margin:20px 0;color:#fff7e8;text-shadow:0 0 45px #ff77c988}
+.finale h2 em{display:block;font-weight:400;color:#ff9bcb}
+.finale-message{font:italic clamp(18px,2.4vw,28px)/1.55 Georgia,serif;color:#ead9ee;max-width:650px;margin:30px auto}
+.reset-btn{background:transparent;border:1px solid #ffd78a88;color:var(--gold)}
+.final-close{position:fixed;right:18px;top:18px;width:52px;height:52px;border-radius:50%;border:1px solid #fff5;background:#12051ccc;color:#fff;font-size:25px;cursor:pointer}
+.spark{position:absolute;width:7px;height:7px;background:var(--gold);border-radius:50%;left:50%;top:50%;animation:spark 2.2s var(--delay) ease-out infinite}
+@keyframes spark{from{transform:rotate(var(--a)) translateX(40px) scale(0);opacity:0}35%{opacity:1}to{transform:rotate(var(--a)) translateX(min(46vw,460px)) scale(1.2);opacity:0}}
+@media(max-width:700px){
+.cover{padding:20px 16px 24px}.topline{font-size:8px}.topline span:last-child{display:none}.bottomline{font-size:8px}
+h1{font-size:clamp(58px,18vw,84px)}.lead{font-size:17px;margin:24px auto}.break-btn{min-height:62px;width:min(100%,330px);padding:0 18px}
+.world-head{padding:12px 14px}.world-title{font-size:22px;max-width:58%}.progress{font-size:9px}.progress strong{font-size:14px}
+.memory-space{height:max(100svh,720px)}.memory{width:clamp(60px,18vw,88px);padding:4px 4px 15px}.memory span{font-size:7px}
+.instruction{bottom:10px;padding:8px 8px 8px 15px}.instruction p{font-size:11px;line-height:1.25}.final-btn{padding:0 14px;min-height:52px}
+.wish{display:block}.wish-photo{margin:66px auto 0;width:calc(100% - 38px);padding:10px}.wish-photo img{height:42svh}.wish-copy{text-align:center;padding:30px 22px 24px}.wish h2{font-size:40px;margin:10px 0 16px}.wish-text{font-size:18px}.signature{margin-top:17px}.dialog-nav{padding-bottom:18px}
+.finale h2{font-size:clamp(65px,22vw,98px)}.finale-message{font-size:18px}.final-close{width:48px;height:48px}
+}
+@media(prefers-reduced-motion:reduce){
+*,*:before,*:after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}
+.memory{opacity:1;transform:translate(-50%,-50%) rotate(var(--r)) scale(var(--scale))}
+}
+</style>
+</head>
+<body>
+<canvas id="fx" aria-hidden="true"></canvas><div class="noise" aria-hidden="true"></div>
+<section class="cover" id="cover">
+  <div class="topline"><span>A birthday page behaving perfectly</span><span>43 memories contained safely</span></div>
+  <div class="cover-center">
+    <p class="kicker">Everything is completely under control</p>
+    <h1>For you,<em>Tin.</em></h1>
+    <p class="lead">A quiet little birthday page. Please do not press the suspicious button.</p>
+    <button class="break-btn" id="breakBtn">Break the website</button>
+    <small class="warning">Tap once. There is no going back.</small>
+  </div>
+  <div class="bottomline"><span>Made with love</span><span>Definitely not unstable</span></div>
+</section>
+
+<main class="world" id="world" aria-hidden="true">
+  <div class="stars" aria-hidden="true"></div>
+  <header class="world-head"><div class="world-title">The memories escaped.</div><div class="progress"><strong id="opened">0</strong> / 43 found</div></header>
+  <section class="memory-space" id="memorySpace" aria-label="Forty-three floating birthday memories">
+    <div class="portal" aria-hidden="true"></div>
+  </section>
+  <div class="instruction"><p>Tap a real photo to open its birthday wish.</p><button class="final-btn" id="finalBtn">Secret finale</button></div>
+</main>
+
+<dialog id="viewer" aria-labelledby="wishTitle">
+  <button class="dialog-close" id="dialogClose" aria-label="Close memory">×</button>
+  <div class="wish">
+    <figure class="wish-photo"><img id="fullImage" alt=""></figure>
+    <div class="wish-copy"><div class="wish-no" id="wishNo"></div><h2 id="wishTitle">Dear Tin,</h2><p class="wish-text" id="wishText"></p><p class="signature">With love, on your birthday. ♡</p></div>
+  </div>
+  <div class="dialog-nav"><button class="nav" id="prev" aria-label="Previous memory">←</button><span id="counter"></span><button class="nav" id="next" aria-label="Next memory">→</button></div>
+</dialog>
+
+<section class="finale" id="finale" aria-hidden="true">
+  <button class="final-close" id="finalClose" aria-label="Close finale">×</button>
+  <div class="finale-card" id="finaleCard">
+    <p class="finale-kicker">The website broke. The love did not.</p>
+    <h2>Happy Birthday,<em>Tin.</em></h2>
+    <p class="finale-message">Forty-three memories escaped just to remind you: you are deeply loved, joyfully celebrated, and impossible to contain in one ordinary page.</p>
+    <button class="reset-btn" id="resetBtn">Break it again</button>
+  </div>
+</section>
+
+<p class="sr" id="status" aria-live="polite"></p>
 <script id="photo-data" type="application/json">[{"src":"./photos/01.jpg","name":"01-FB_IMG_1788030107315.jpg","dedication":"Tin, may your birthday feel as warm as the love gathered around you."},{"src":"./photos/02.jpg","name":"02-FB_IMG_1788029923955.jpg","dedication":"Here’s to another year of laughter that stays with you long after the moment ends."},{"src":"./photos/03.jpg","name":"03-FB_IMG_1788029919328.jpg","dedication":"May you always find time for the little things that make you happy."},{"src":"./photos/04.jpg","name":"04-FB_IMG_1788029913854.jpg","dedication":"Wishing you adventures worth remembering and people worth sharing them with."},{"src":"./photos/05.jpg","name":"05-FB_IMG_1788029908141.jpg","dedication":"May this new chapter bring you peaceful mornings and joyful surprises."},{"src":"./photos/06.jpg","name":"06-FB_IMG_1788029903986.jpg","dedication":"Today is a lovely reason to celebrate the person you are, just as you are."},{"src":"./photos/07.jpg","name":"07-FB_IMG_1788029899079.jpg","dedication":"Here’s to the ordinary days that become your favorite memories."},{"src":"./photos/08.jpg","name":"08-FB_IMG_1788029891043.jpg","dedication":"May love meet you in a thousand small and unexpected ways this year."},{"src":"./photos/09.jpg","name":"09-FB_IMG_1788029887828.jpg","dedication":"Wishing you the courage to follow whatever makes your heart feel alive."},{"src":"./photos/10.jpg","name":"10-FB_IMG_1788029883137.jpg","dedication":"May your birthday remind you how much you mean to the people around you."},{"src":"./photos/11.jpg","name":"02-Messenger_creation_C2B13145-B5B3-4A17-AF5A-A1C13941B7DA.jpeg","dedication":"Here’s to more pictures taken between fits of laughter."},{"src":"./photos/12.jpg","name":"03-Messenger_creation_EC56E805-E1C3-4BBF-990C-D9926DDDED48.jpeg","dedication":"May the coming year give you beautiful places to go and a happy place to return to."},{"src":"./photos/13.jpg","name":"04-Messenger_creation_5478B7E2-D719-4442-8AE1-013F3C74F6BF.jpeg","dedication":"Wishing you friendships that feel easy, honest, and full of joy."},{"src":"./photos/14.jpg","name":"05-Messenger_creation_66291FE3-04B0-4C79-A491-C146C1E7137A.jpeg","dedication":"May you never run out of reasons to smile or people to smile with."},{"src":"./photos/15.jpg","name":"06-Messenger_creation_067869E9-C002-4EFE-9825-4E1DB6A84FE9.jpeg","dedication":"Tin, you deserve a birthday filled with the things you love most."},{"src":"./photos/16.jpg","name":"07-Messenger_creation_369CE94E-969A-4ACA-96CD-C3A62F10823B.jpeg","dedication":"Here’s to the next adventure, the next good story, and the next unforgettable day."},{"src":"./photos/17.jpg","name":"08-Messenger_creation_D38E2949-88A9-4EE3-8A32-47CF4A9FCAC9.jpeg","dedication":"May your heart stay curious and your days leave room for a little fun."},{"src":"./photos/18.jpg","name":"09-Messenger_creation_47C8F2F5-EEDA-4F2D-BBB4-0AB869AE14EE.jpeg","dedication":"Wishing you moments so happy you forget to check the time."},{"src":"./photos/19.jpg","name":"10-Messenger_creation_3A18FDFD-3624-48C0-B9DA-176118A2F2F2.jpeg","dedication":"May this year be kind to you in ways you have not even imagined."},{"src":"./photos/20.jpg","name":"01-Messenger_creation_36B655C8-D5B2-4250-B8FB-9C64C6A5E3B8.jpeg","dedication":"Here’s to celebrations big and small, and finding joy in both."},{"src":"./photos/21.jpg","name":"02-Messenger_creation_AACCEEA7-A033-40C4-8B7D-C82F028FA726.jpeg","dedication":"May you feel appreciated today and on all the quiet days in between."},{"src":"./photos/22.jpg","name":"03-Messenger_creation_6423F8AD-B94A-450D-A689-0A81AEA1BBB3.jpeg","dedication":"Wishing you a year with more happy reunions and fewer hurried goodbyes."},{"src":"./photos/23.jpg","name":"04-Messenger_creation_C0C9C28A-B4C9-4B78-9419-89A4294E13D0.jpeg","dedication":"May your dreams have room to grow, one hopeful step at a time."},{"src":"./photos/24.jpg","name":"05-Messenger_creation_A8D57332-3373-427C-BFBB-6EAA32E8BBFA.jpeg","dedication":"Here’s to taking the scenic route whenever life gives you the chance."},{"src":"./photos/25.jpg","name":"06-Messenger_creation_6BBBDDBA-AAF6-4938-8A3A-DB12681F1E90.jpeg","dedication":"May the people you love keep filling your world with warmth."},{"src":"./photos/26.jpg","name":"07-Messenger_creation_216308B7-9858-4BAB-9E1C-88E5A38053B3.jpeg","dedication":"Tin, may your birthday be the beginning of a particularly lovely chapter."},{"src":"./photos/27.jpg","name":"08-Messenger_creation_FCAD150D-ECC8-4F6D-B08B-1E61AA071B4E.jpeg","dedication":"Wishing you the freedom to rest, recharge, and enjoy your own beautiful pace."},{"src":"./photos/28.jpg","name":"09-Messenger_creation_DC07EFB3-E25C-4E77-ACF2-52902C95E676.jpeg","dedication":"May a favorite song, a good meal, and familiar laughter never be far away."},{"src":"./photos/29.jpg","name":"10-Messenger_creation_067FFE0F-37ED-4098-B5AD-9D1AD3AD26B4.jpeg","dedication":"Here’s to new memories that will make you say, “We should do that again.”"},{"src":"./photos/30.jpg","name":"01-Messenger_creation_0A9ECEE4-9853-4AA6-85A2-D64C5B027F1A.jpeg","dedication":"May you keep collecting moments that feel like sunshine."},{"src":"./photos/31.jpg","name":"02-Messenger_creation_1F5121EC-C542-429A-A76E-AA62EE870BF0.jpeg","dedication":"Wishing you love that feels steady and happiness that feels simple."},{"src":"./photos/32.jpg","name":"03-Messenger_creation_CE0E3BEC-34C6-4D7E-919A-CDD65113D563.jpeg","dedication":"May the next year bring you something wonderful to look forward to."},{"src":"./photos/33.jpg","name":"04-Messenger_creation_C6A6DB47-A584-4077-8664-18D541C688C5.jpeg","dedication":"Here’s to the stories behind these photographs, and all the stories still unwritten."},{"src":"./photos/34.jpg","name":"05-Messenger_creation_F0104CC2-1EA5-436A-8F41-1CF23723748B.jpeg","dedication":"May your days hold enough wonder to keep surprising you."},{"src":"./photos/35.jpg","name":"06-Messenger_creation_0D20FA72-B44C-4C84-B0DE-3632725C3DFD.jpeg","dedication":"Tin, may you always have someone beside you to celebrate the good news."},{"src":"./photos/36.jpg","name":"07-Messenger_creation_D9F27D5D-D428-4F03-BDE1-67BB3DA9E2C4.jpeg","dedication":"Wishing you moments of pride in how far you have come."},{"src":"./photos/37.jpg","name":"08-Messenger_creation_E4B8FF19-828A-486F-921E-8ACC70435A7C.jpeg","dedication":"May you find beauty in the familiar and joy in trying something new."},{"src":"./photos/38.jpg","name":"09-Messenger_creation_F13E383D-8CA4-4B84-887A-5B5E6FE7076D.jpeg","dedication":"Here’s to a heart full of gratitude and a calendar with room for happiness."},{"src":"./photos/39.jpg","name":"10-Messenger_creation_890270A4-91B9-42FA-89D3-C99E8189B1DB.jpeg","dedication":"May this birthday leave you feeling loved, celebrated, and wonderfully yourself."},{"src":"./photos/40.jpg","name":"01-FB_IMG_1788075807247.jpg","dedication":"Wishing you more carefree afternoons and adventures under the stars."},{"src":"./photos/41.jpg","name":"02-FB_IMG_1788075739480.jpg","dedication":"May the road ahead bring good company and beautiful possibilities."},{"src":"./photos/42.jpg","name":"03-FB_IMG_1788075729417.jpg","dedication":"Here’s to loving your life in all its little, imperfect, wonderful details."},{"src":"./photos/43.jpg","name":"04-FB_IMG_1788075713280.jpg","dedication":"Happy Birthday, Tin. Forty-three photographs, one heart, and so much love for you."}]</script>
 <script>
+(function(){
 'use strict';
-const photos=JSON.parse(document.getElementById('photo-data').textContent);
-const stage=document.getElementById('stage'),viewer=document.getElementById('viewer'),arrange=document.getElementById('arrange');
-const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const rows=[4,8,9,8,6,4,3,1],positions=[];
-rows.forEach((count,row)=>{for(let col=0;col<count;col++){let x=col-(count-1)/2;if(row===0)x=[-2.5,-1.5,1.5,2.5][col];positions.push({x:50+x*10.4,y:8+row*11.7})}});
-const visited=new Set();let current=0,timer;
-function random(i,salt){const n=Math.sin(i*127.1+salt*311.7)*43758.5453;return n-Math.floor(n)}
-photos.forEach((photo,i)=>{const button=document.createElement('button');button.className='polaroid';button.setAttribute('aria-label',`Open birthday dedication ${i+1} of 43`);const pos=positions[i];const values={'--sx':(8+random(i,1)*84)+'%','--sy':(9+random(i,2)*81)+'%','--sr':(-32+random(i,3)*64)+'deg','--hx':pos.x+'%','--hy':pos.y+'%','--hr':(-5+random(i,4)*10)+'deg','--delay':(i%9)*45+'ms','--layer':i+1};Object.entries(values).forEach(([k,v])=>button.style.setProperty(k,v));const img=document.createElement('img');img.src=photo.src;img.alt=`Tin’s birthday photograph ${i+1}`;img.decoding='async';img.draggable=false;const caption=document.createElement('span');caption.textContent='with love · '+String(i+1).padStart(2,'0');button.append(img,caption);button.addEventListener('click',()=>openWish(i));stage.append(button)});
-function gather(){stage.classList.add('gathered');arrange.textContent='Scatter & replay';document.getElementById('status').textContent='43 photographs gathered into a heart. Touch any photo to open a dedication.'}
-function scatter(){stage.classList.remove('gathered');arrange.textContent='Gather into a heart';document.getElementById('status').textContent='The photographs are scattered. They will gather into a heart.'}
-arrange.addEventListener('click',()=>{clearTimeout(timer);if(stage.classList.contains('gathered')){scatter();timer=setTimeout(gather,reducedMotion?0:1700)}else gather()});
-if(reducedMotion)gather();else timer=setTimeout(gather,1500);
-function renderWish(){document.getElementById('full-image').src=photos[current].src;document.getElementById('full-image').alt=`Tin’s birthday photograph ${current+1}`;document.getElementById('caption').textContent='Memory '+String(current+1).padStart(2,'0')+' · a little moment to keep';document.getElementById('wish-number').textContent='Birthday wish '+String(current+1).padStart(2,'0');document.getElementById('dedication-text').textContent=photos[current].dedication;document.getElementById('counter').textContent=(current+1)+' / '+photos.length;visited.add(current);stage.children[current].classList.add('seen');document.getElementById('progress').innerHTML='<strong>'+visited.size+' / 43</strong> wishes opened'}
+var photos=JSON.parse(document.getElementById('photo-data').textContent);
+var body=document.body,cover=document.getElementById('cover'),world=document.getElementById('world');
+var space=document.getElementById('memorySpace'),viewer=document.getElementById('viewer'),finale=document.getElementById('finale');
+var canvas=document.getElementById('fx'),ctx=canvas.getContext('2d'),reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var cards=[],seen=new Set(),current=0,cracks=[],particles=[],raf=0;
+function rnd(i,s){var x=Math.sin(i*127.1+s*311.7)*43758.5453;return x-Math.floor(x)}
+function layout(i){
+  var mobile=innerWidth<700, cols=mobile?6:9, row=Math.floor(i/cols), col=i%cols;
+  var usable=mobile?88:92, x=6+(col+.5)*usable/cols+(rnd(i,2)-.5)*(mobile?7:5);
+  var rows=Math.ceil(photos.length/cols), y=12+(row+.5)*76/rows+(rnd(i,4)-.5)*7;
+  if(i%11===0){x=50+(rnd(i,8)-.5)*24;y=50+(rnd(i,9)-.5)*25}
+  return{x:x,y:y};
+}
+function buildCards(){
+  photos.forEach(function(photo,i){
+    var p=layout(i),b=document.createElement('button'),img=document.createElement('img'),label=document.createElement('span');
+    b.className='memory';b.setAttribute('aria-label','Open birthday memory '+(i+1)+' of '+photos.length);
+    b.style.setProperty('--x',p.x+'%');b.style.setProperty('--y',p.y+'%');b.style.setProperty('--r',(-15+rnd(i,3)*30)+'deg');
+    b.style.setProperty('--d',(0.12+(i%12)*.065)+'s');b.style.setProperty('--f',(3.6+rnd(i,7)*3.2)+'s');
+    b.style.setProperty('--z',String(2+Math.floor(rnd(i,5)*7)));b.style.setProperty('--scale',String(.78+rnd(i,6)*.35));
+    img.src=photo.src;img.alt='Tin birthday photograph '+(i+1);img.loading=i<12?'eager':'lazy';img.decoding='async';img.draggable=false;
+    label.textContent='memory '+String(i+1).padStart(2,'0');b.append(img,label);b.addEventListener('click',function(){openWish(i);addCrack()});
+    space.appendChild(b);cards.push(b);
+  });
+}
+function sizeCanvas(){canvas.width=innerWidth*devicePixelRatio;canvas.height=innerHeight*devicePixelRatio;canvas.style.width=innerWidth+'px';canvas.style.height=innerHeight+'px';ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0)}
+function fracture(){
+  sizeCanvas();var cx=innerWidth/2,cy=innerHeight/2;
+  for(var i=0;i<23;i++){var a=(Math.PI*2/23)*i+(rnd(i,9)-.5)*.25,len=Math.max(innerWidth,innerHeight)*(.3+rnd(i,2)*.62);cracks.push({x:cx,y:cy,a:a,len:len,p:0,s:.035+rnd(i,5)*.04,branches:rnd(i,7)>.35})}
+  for(var j=0;j<90;j++){particles.push({x:cx,y:cy,vx:(rnd(j,1)-.5)*24,vy:(rnd(j,2)-.5)*22-3,life:1,size:2+rnd(j,3)*7})}
+  drawFX();
+}
+function drawFX(){
+  ctx.clearRect(0,0,innerWidth,innerHeight);
+  ctx.lineCap='round';
+  cracks.forEach(function(c,k){c.p=Math.min(1,c.p+c.s);var ex=c.x+Math.cos(c.a)*c.len*c.p,ey=c.y+Math.sin(c.a)*c.len*c.p;ctx.beginPath();ctx.moveTo(c.x,c.y);ctx.lineTo(ex,ey);ctx.strokeStyle='rgba(255,255,255,'+(0.92-c.p*.45)+')';ctx.lineWidth=k%4===0?3:1.2;ctx.shadowColor='#e6b4ff';ctx.shadowBlur=8;ctx.stroke();if(c.branches&&c.p>.45){var bx=c.x+Math.cos(c.a)*c.len*.45,by=c.y+Math.sin(c.a)*c.len*.45;ctx.beginPath();ctx.moveTo(bx,by);ctx.lineTo(bx+Math.cos(c.a+.75)*c.len*.18,by+Math.sin(c.a+.75)*c.len*.18);ctx.stroke()}});ctx.shadowBlur=0;
+  particles.forEach(function(p){p.x+=p.vx;p.y+=p.vy;p.vy+=.35;p.life-=.018;ctx.fillStyle='rgba(255,215,138,'+Math.max(0,p.life)+')';ctx.fillRect(p.x,p.y,p.size,p.size)});
+  particles=particles.filter(function(p){return p.life>0});
+  if(cracks.some(function(c){return c.p<1})||particles.length)raf=requestAnimationFrame(drawFX);else setTimeout(function(){ctx.clearRect(0,0,innerWidth,innerHeight)},800);
+}
+function breakSite(){
+  if(cover.classList.contains('breaking'))return;
+  cover.classList.add('breaking');document.getElementById('status').textContent='The page is cracking open.';
+  if(!reduced)fracture();
+  setTimeout(function(){body.classList.add('revealed');world.setAttribute('aria-hidden','false');document.getElementById('status').textContent='The hidden birthday universe is open. Forty-three memories are floating around you.'},reduced?0:1950);
+}
+function addCrack(){
+  if(reduced)return;var line=document.createElement('i');line.className='crack';line.style.left=(12+Math.random()*76)+'%';line.style.top=(15+Math.random()*55)+'%';line.style.transform='rotate('+(-70+Math.random()*140)+'deg)';world.appendChild(line);setTimeout(function(){line.remove()},1300);
+}
+function renderWish(){
+  var p=photos[current];document.getElementById('fullImage').src=p.src;document.getElementById('fullImage').alt='Tin birthday photograph '+(current+1);
+  document.getElementById('wishNo').textContent='Escaped memory '+String(current+1).padStart(2,'0');
+  document.getElementById('wishText').textContent=p.dedication;document.getElementById('counter').textContent=(current+1)+' / '+photos.length;
+  seen.add(current);cards[current].classList.add('opened');document.getElementById('opened').textContent=seen.size;
+}
 function openWish(i){current=i;renderWish();viewer.showModal()}
 function step(n){current=(current+n+photos.length)%photos.length;renderWish()}
-document.getElementById('browse').addEventListener('click',()=>openWish(current));document.getElementById('close').addEventListener('click',()=>viewer.close());document.getElementById('previous').addEventListener('click',()=>step(-1));document.getElementById('next').addEventListener('click',()=>step(1));viewer.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'){e.preventDefault();step(-1)}if(e.key==='ArrowRight'){e.preventDefault();step(1)}});
-let start=null;const swipe=document.getElementById('swipe-area');swipe.addEventListener('touchstart',e=>{start=e.touches.length===1?{x:e.touches[0].clientX,y:e.touches[0].clientY}:null},{passive:true});swipe.addEventListener('touchend',e=>{if(!start)return;const dx=e.changedTouches[0].clientX-start.x,dy=e.changedTouches[0].clientY-start.y;if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.5)step(dx<0?1:-1);start=null},{passive:true});
-viewer.addEventListener('click',e=>{if(e.target===viewer){const r=viewer.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)viewer.close()}});
-</script></body></html>
+function showFinale(){
+  finale.classList.add('show');finale.setAttribute('aria-hidden','false');
+  if(!document.querySelector('.spark')){for(var i=0;i<36;i++){var s=document.createElement('i');s.className='spark';s.style.setProperty('--a',(i*10)+'deg');s.style.setProperty('--delay',((i%9)*.11)+'s');document.getElementById('finaleCard').appendChild(s)}}
+}
+function resetAll(){finale.classList.remove('show');finale.setAttribute('aria-hidden','true');body.classList.remove('revealed');cover.classList.remove('breaking');world.setAttribute('aria-hidden','true');scrollTo(0,0)}
+document.getElementById('breakBtn').addEventListener('click',breakSite);
+document.getElementById('dialogClose').addEventListener('click',function(){viewer.close()});
+document.getElementById('prev').addEventListener('click',function(){step(-1)});
+document.getElementById('next').addEventListener('click',function(){step(1)});
+document.getElementById('finalBtn').addEventListener('click',showFinale);
+document.getElementById('finalClose').addEventListener('click',function(){finale.classList.remove('show');finale.setAttribute('aria-hidden','true')});
+document.getElementById('resetBtn').addEventListener('click',resetAll);
+viewer.addEventListener('click',function(e){if(e.target===viewer)viewer.close()});
+viewer.addEventListener('keydown',function(e){if(e.key==='ArrowLeft')step(-1);if(e.key==='ArrowRight')step(1)});
+var sx=0;viewer.addEventListener('touchstart',function(e){sx=e.changedTouches[0].clientX},{passive:true});viewer.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>55)step(dx>0?-1:1)},{passive:true});
+space.addEventListener('pointermove',function(e){if(reduced)return;var dx=(e.clientX/innerWidth-.5)*10,dy=(e.clientY/innerHeight-.5)*8;space.style.transform='translate('+dx+'px,'+dy+'px)'});
+space.addEventListener('pointerleave',function(){space.style.transform='none'});
+addEventListener('resize',sizeCanvas,{passive:true});buildCards();sizeCanvas();
+})();
+</script>
+</body></html>
