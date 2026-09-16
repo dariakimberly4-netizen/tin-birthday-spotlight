@@ -14,32 +14,211 @@ button{font:inherit;cursor:pointer;touch-action:manipulation}
 .open{position:fixed;z-index:40;inset:0;display:grid;place-items:center;text-align:center;padding:24px;background:#05000de8;transition:.8s}.open.hide{opacity:0;visibility:hidden;pointer-events:none}.eyebrow{font-size:11px;letter-spacing:.28em;color:var(--gold);text-transform:uppercase}.open h1{font:400 clamp(50px,10vw,118px)/.84 Georgia,serif;letter-spacing:-.06em;margin:18px auto;max-width:1000px}.open h1 em{display:block;color:var(--pink);font-weight:400}.open p{max-width:700px;margin:0 auto 26px;color:#dcc9e9;font:italic clamp(17px,2vw,23px)/1.55 Georgia,serif}.pill{border:0;border-radius:999px;min-height:58px;padding:18px 30px;background:linear-gradient(135deg,var(--gold),var(--pink));color:#32142d;font-weight:900;letter-spacing:.11em;text-transform:uppercase;box-shadow:0 0 50px #ff79bd55}
 .app{position:fixed;inset:0;opacity:0;visibility:hidden;pointer-events:none;transition:.8s}.app.on{opacity:1;visibility:visible;pointer-events:auto}.top{position:absolute;z-index:20;left:0;right:0;top:0;display:flex;justify-content:space-between;gap:14px;padding:16px 18px;background:linear-gradient(#06010ef2,transparent);pointer-events:none}.brand{font:italic clamp(18px,2.5vw,28px) Georgia,serif}.status{text-align:right;font-size:10px;letter-spacing:.12em;color:#ccb8d8;text-transform:uppercase}.status b{display:block;color:var(--gold);font-size:15px}.hint{position:absolute;z-index:18;left:50%;bottom:18px;transform:translateX(-50%);text-align:center;color:#e9ddef;font:italic 15px/1.45 Georgia,serif;max-width:min(92vw,760px);padding:0 18px}.hint b{color:var(--gold);font-style:normal;letter-spacing:.16em;text-transform:uppercase;font-size:11px;display:block;margin-bottom:5px}
 .spaceWrap{position:absolute;inset:0;overflow:hidden;perspective:1200px}.spaceField{position:absolute;inset:0;transform-origin:center center;transition:transform 1.5s ease,filter 1.2s ease}.spaceField.finalView{transform:scale(.78);filter:brightness(1.08)}
-.photo{position:absolute;left:50%;top:50%;width:64px;height:82px;padding:4px 4px 13px;border:0;border-radius:8px;background:var(--cream);box-shadow:0 12px 34px #000b,0 0 24px #ffffff12;transform:translate(-50%,-50%);transition:box-shadow .3s ease,outline-color .3s ease;z-index:5}.photo:after{content:"";position:absolute;inset:-10px;border-radius:14px}.photo img{width:100%;height:100%;display:block;object-fit:cover;border-radius:4px;pointer-events:none}.photo.seen{outline:3px solid var(--gold);box-shadow:0 0 28px #ffd37d,0 10px 28px #000c}.photo:active{filter:brightness(1.08)}
-.wordGhost{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;opacity:0;transition:1s}.wordGhost span{font:700 clamp(72px,18vw,230px)/.8 Georgia,serif;letter-spacing:.22em;color:#ffffff08;text-shadow:0 0 22px #ffd37d33}.app.progressing .wordGhost{opacity:.55}.app.revealed .wordGhost{opacity:.92}.app.revealed .wordGhost span{color:#fff0;text-shadow:0 0 42px #ffd37d55}
+.photo{position:absolute;left:50%;top:50%;width:74px;height:74px;padding:0;border:2px solid rgba(255,255,255,.78);border-radius:50%;background:transparent;box-shadow:0 10px 28px #000b,0 0 22px #ffffff14;overflow:hidden;transform:translate(-50%,-50%);transition:box-shadow .3s ease,border-color .3s ease,transform .2s ease;z-index:5}.photo:after{content:"";position:absolute;inset:-10px;border-radius:50%}.photo img{width:100%;height:100%;display:block;object-fit:cover;object-position:center;border-radius:50%;pointer-events:none}.photo.seen{border-color:var(--gold);box-shadow:0 0 28px #ffd37d,0 10px 28px #000c}.photo:active{filter:brightness(1.08)}
+.wordGhost{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;opacity:0;transition:1s}.wordGhost span{font:700 clamp(72px,18vw,230px)/.8 Georgia,serif;letter-spacing:.22em;color:#ffffff08;text-shadow:0 0 22px #ffd37d33}.app.progressing .wordGhost{opacity:.55}.app.revealed .wordGhost{opacity:.92}.app.revealed .wordGhost span{color:#fff0; text-shadow:0 0 42px #ffd37d55}
 .modal{position:fixed;z-index:60;inset:0;display:none;place-items:center;background:#030008e8;padding:18px}.modal.on{display:grid}.card{position:relative;width:min(92vw,720px);max-height:90vh;overflow:auto;border:1px solid #ffffff33;border-radius:24px;background:linear-gradient(145deg,#26103f,#090211);padding:20px;text-align:center}.card img{max-width:100%;max-height:58vh;object-fit:contain;border:8px solid var(--cream)}.card h3{font:italic clamp(30px,5vw,42px) Georgia,serif;color:#ff92cf;margin:18px 0 5px}.card p{font:18px/1.5 Georgia,serif;color:#e6d8ed}.x{position:absolute;right:10px;top:10px;width:50px;height:50px;border-radius:50%;border:1px solid #ffffff44;background:#0a0212e8;color:#fff;font-size:23px;z-index:3}
 .finalPanel{position:absolute;z-index:30;left:50%;top:50%;transform:translate(-50%,-50%);width:min(92vw,820px);text-align:center;border:1px solid #ffffff30;border-radius:28px;background:linear-gradient(145deg,#2b1144ee,#12031df0);box-shadow:0 30px 80px #0009;padding:28px 22px 24px;opacity:0;visibility:hidden;pointer-events:none;transition:1s}.app.revealed .finalPanel{opacity:1;visibility:visible;pointer-events:auto}.finalPanel small{display:block;color:var(--gold);letter-spacing:.28em;text-transform:uppercase;margin-bottom:12px}.finalPanel h2{font:400 clamp(42px,8vw,86px)/.92 Georgia,serif;margin:0 0 14px;color:#ff9bd2;text-shadow:0 0 30px #ff70ba55}.finalPanel p{max-width:680px;margin:0 auto 14px;color:#f3e8f7;font:italic clamp(18px,2.25vw,24px)/1.6 Georgia,serif}.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:18px}.actionBtn{border:0;border-radius:999px;min-height:52px;padding:14px 22px;font-weight:800;letter-spacing:.06em}.actionBtn.primary{background:linear-gradient(135deg,var(--gold),var(--pink));color:#32142d}.actionBtn.secondary{background:#ffffff12;color:#fff;border:1px solid #ffffff24}
-@media(max-width:720px){.brand{font-size:17px}.status b{font-size:13px}.photo{width:58px;height:74px}.spaceField.finalView{transform:scale(.72)}.finalPanel{padding:24px 18px}.finalPanel h2{font-size:clamp(38px,12vw,56px)}.hint{bottom:16px;font-size:14px}}
+@media(max-width:720px){.brand{font-size:17px}.status b{font-size:13px}.photo{width:58px;height:58px}.spaceField.finalView{transform:scale(.72)}.finalPanel{padding:24px 18px}.finalPanel h2{font-size:clamp(38px,12vw,56px)}.hint{bottom:16px;font-size:14px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.2s!important}}
 </style>
 </head>
 <body>
 <div class="sky"></div><div class="nebula"></div><div class="stars"></div>
-<section class="open" id="open"><div><div class="eyebrow">Cosmic birthday anomaly detected</div><h1>The Universe Is Trying <em>to Spell Tin</em></h1><p>Forty-three memories are drifting through space. Explore them one by one. The more memories you uncover, the closer the universe gets to revealing Tin’s name.</p><button class="pill" id="start">Enter the universe</button></div></section>
-<main class="app" id="app"><header class="top"><div class="brand">Tin’s Memory Universe</div><div class="status">Memories explored <b id="meter">0 / 43</b></div></header><div class="spaceWrap"><div class="spaceField" id="spaceField"></div><div class="wordGhost"><span>T&nbsp;I&nbsp;N</span></div></div><div class="hint" id="hint"><b>Keep exploring</b>Tap the floating memories. As each one opens, the universe slowly moves the photos into place.</div><div class="finalPanel" id="finalPanel"><small>Final reveal</small><h2>The universe spelled TIN ✨</h2><p>All 43 memories came together to reveal the name at the center of this little galaxy.</p><p>Happy Birthday, Tin. May your life keep filling the universe with beautiful moments worth remembering.</p><div class="actions"><button class="actionBtn primary" id="replay">Replay the universe</button><button class="actionBtn secondary" id="hidePanel">Keep looking at TIN</button></div></div></main>
-<div class="modal" id="modal"><div class="card"><button class="x" id="close" aria-label="Close">×</button><img id="big" alt=""><h3 id="memoryTitle"></h3><p id="memoryText"></p></div></div>
+<section class="open" id="open">
+  <div>
+    <div class="eyebrow">Cosmic birthday anomaly detected</div>
+    <h1>The Universe Is Trying <em>to Spell Tin</em></h1>
+    <p>Forty-three memories are drifting through space. Explore them one by one. The more memories you uncover, the closer the universe gets to revealing Tin’s name.</p>
+    <button class="pill" id="start">Enter the universe</button>
+  </div>
+</section>
+<main class="app" id="app">
+  <header class="top">
+    <div class="brand">Tin’s Memory Universe</div>
+    <div class="status">Memories explored <b id="meter">0 / 43</b></div>
+  </header>
+  <div class="spaceWrap">
+    <div class="spaceField" id="spaceField"></div>
+    <div class="wordGhost"><span>T&nbsp;I&nbsp;N</span></div>
+  </div>
+  <div class="hint" id="hint"><b>Keep exploring</b>Tap the floating memories. As each one opens, the universe slowly moves the photos into place.</div>
+  <div class="finalPanel" id="finalPanel">
+    <small>Final reveal</small>
+    <h2>The universe spelled TIN ✨</h2>
+    <p>All 43 memories came together to reveal the name at the center of this little galaxy.</p>
+    <p>Happy Birthday, Tin. May your life keep filling the universe with beautiful moments worth remembering.</p>
+    <div class="actions">
+      <button class="actionBtn primary" id="replay">Replay the universe</button>
+      <button class="actionBtn secondary" id="hidePanel">Keep looking at TIN</button>
+    </div>
+  </div>
+</main>
+<div class="modal" id="modal">
+  <div class="card">
+    <button class="x" id="close" aria-label="Close">×</button>
+    <img id="big" alt="">
+    <h3 id="memoryTitle"></h3>
+    <p id="memoryText"></p>
+  </div>
+</div>
 <script>
 const TOTAL=43;
-const lines=['A memory bright enough to steer a universe.','Another piece of Tin’s story found its place.','This moment still glows in orbit.','The stars held onto this one for a reason.','A beautiful memory drifting home.','One more reason the universe remembers Tin.','This photo carries its own little gravity.','Another memory moves the letters into place.'];
-const app=document.getElementById('app'),openScreen=document.getElementById('open'),meter=document.getElementById('meter'),field=document.getElementById('spaceField'),hint=document.getElementById('hint'),modal=document.getElementById('modal'),big=document.getElementById('big'),memoryTitle=document.getElementById('memoryTitle'),memoryText=document.getElementById('memoryText'),finalPanel=document.getElementById('finalPanel');
-const seen=new Set(),cards=[];let finalReveal=false,panelHidden=false;
-function makeTargets(count){const canvas=document.createElement('canvas');canvas.width=1400;canvas.height=500;const ctx=canvas.getContext('2d');ctx.fillStyle='#fff';ctx.textAlign='center';ctx.textBaseline='middle';ctx.font='900 280px Arial';ctx.fillText('TIN',700,255);const data=ctx.getImageData(0,0,canvas.width,canvas.height).data,candidates=[];for(let y=26;y<canvas.height-18;y+=12){for(let x=24;x<canvas.width-24;x+=12){if(data[(y*canvas.width+x)*4+3]>60)candidates.push([x,y]);}}for(let i=candidates.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[candidates[i],candidates[j]]=[candidates[j],candidates[i]];}const picked=[];for(let i=0;i<candidates.length&&picked.length<count;i++){const p=candidates[i];if(!picked.some(q=>Math.hypot(q[0]-p[0],q[1]-p[1])<70))picked.push(p);}while(picked.length<count)picked.push(candidates[picked.length%candidates.length]);return picked.slice(0,count).map(([x,y])=>({x:16+(x/canvas.width)*68,y:26+(y/canvas.height)*38}));}
-const targets=makeTargets(TOTAL);function rand(min,max){return Math.random()*(max-min)+min}
-for(let i=1;i<=TOTAL;i++){const btn=document.createElement('button');btn.className='photo';btn.setAttribute('aria-label','Open memory '+i);btn.innerHTML=`<img src="photos/${String(i).padStart(2,'0')}.jpg" alt="Memory ${i}">`;const item={el:btn,n:i,seen:false,baseX:rand(12,88),baseY:rand(16,82),ampX:rand(4,11),ampY:rand(4,10),speedX:rand(.24,.62),speedY:rand(.18,.48),phase:rand(0,Math.PI*2),phase2:rand(0,Math.PI*2),depth:rand(.82,1.28),targetX:targets[i-1].x,targetY:targets[i-1].y};btn.addEventListener('click',()=>openMemory(item));cards.push(item);field.appendChild(btn);}
-function progress(){return seen.size/TOTAL}function updateUI(){meter.textContent=`${seen.size} / ${TOTAL}`;app.classList.toggle('progressing',seen.size>0&&!finalReveal);if(finalReveal){hint.innerHTML='<b>Final reveal</b>Zoomed out, all 43 photos now form the giant letters T I N.';}else if(seen.size===0){hint.innerHTML='<b>Keep exploring</b>Tap the floating memories. As each one opens, the universe slowly moves the photos into place.';}else{hint.innerHTML=`<b>The letters are forming</b>${seen.size} of ${TOTAL} memories explored. The universe is slowly spelling Tin.`;}}
-function openMemory(item){if(!item.seen){item.seen=true;seen.add(item.n);item.el.classList.add('seen');updateUI();if(seen.size===TOTAL)setTimeout(revealFinal,700);}big.src=`photos/${String(item.n).padStart(2,'0')}.jpg`;big.alt=`Memory ${item.n}`;memoryTitle.textContent=`Memory ${item.n}`;memoryText.textContent=lines[(item.n-1)%lines.length];modal.classList.add('on');}
-document.getElementById('close').onclick=()=>modal.classList.remove('on');modal.onclick=e=>{if(e.target===modal)modal.classList.remove('on')};document.getElementById('start').onclick=()=>{openScreen.classList.add('hide');app.classList.add('on');updateUI()};document.getElementById('replay').onclick=()=>location.reload();document.getElementById('hidePanel').onclick=()=>{panelHidden=true;finalPanel.style.opacity='0';finalPanel.style.visibility='hidden';finalPanel.style.pointerEvents='none'};
-function revealFinal(){if(finalReveal)return;finalReveal=true;app.classList.add('revealed');field.classList.add('finalView');updateUI();if(panelHidden){panelHidden=false;finalPanel.style.opacity='';finalPanel.style.visibility='';finalPanel.style.pointerEvents='';}}
-function animate(t){const time=t/1000,mixFinal=finalReveal?1:progress()*.88;cards.forEach(item=>{const chaosX=item.baseX+Math.sin(time*item.speedX+item.phase)*item.ampX+Math.cos(time*.33+item.phase2)*item.ampX*.35;const chaosY=item.baseY+Math.cos(time*item.speedY+item.phase2)*item.ampY+Math.sin(time*.41+item.phase)*item.ampY*.22;const mix=mixFinal,x=chaosX*(1-mix)+item.targetX*mix,y=chaosY*(1-mix)+item.targetY*mix,driftRot=Math.sin(time*.35+item.phase)*7*(1-mix),scale=((item.depth)+(Math.sin(time*.7+item.phase2)+1)*.08)*(1-mix*.32)+(mix*.9);item.el.style.left=x+'%';item.el.style.top=y+'%';item.el.style.transform=`translate(-50%,-50%) scale(${scale}) rotate(${driftRot}deg)`;item.el.style.zIndex=String(20+Math.round(scale*100)+(item.seen?100:0));item.el.style.opacity=String(finalReveal?1:(.88+mix*.12));});requestAnimationFrame(animate);}updateUI();requestAnimationFrame(animate);
+const lines=[
+  'A memory bright enough to steer a universe.',
+  'Another piece of Tin’s story found its place.',
+  'This moment still glows in orbit.',
+  'The stars held onto this one for a reason.',
+  'A beautiful memory drifting home.',
+  'One more reason the universe remembers Tin.',
+  'This photo carries its own little gravity.',
+  'Another memory moves the letters into place.'
+];
+const app=document.getElementById('app');
+const openScreen=document.getElementById('open');
+const meter=document.getElementById('meter');
+const field=document.getElementById('spaceField');
+const hint=document.getElementById('hint');
+const modal=document.getElementById('modal');
+const big=document.getElementById('big');
+const memoryTitle=document.getElementById('memoryTitle');
+const memoryText=document.getElementById('memoryText');
+const finalPanel=document.getElementById('finalPanel');
+const seen=new Set();
+const cards=[];
+let finalReveal=false;
+let panelHidden=false;
+
+function makeTargets(count){
+  const canvas=document.createElement('canvas');
+  canvas.width=1400;
+  canvas.height=500;
+  const ctx=canvas.getContext('2d');
+  ctx.fillStyle='#fff';
+  ctx.textAlign='center';
+  ctx.textBaseline='middle';
+  ctx.font='900 280px Arial';
+  ctx.fillText('TIN',700,255);
+  const data=ctx.getImageData(0,0,canvas.width,canvas.height).data;
+  const candidates=[];
+  for(let y=26;y<canvas.height-18;y+=12){
+    for(let x=24;x<canvas.width-24;x+=12){
+      if(data[(y*canvas.width+x)*4+3]>60) candidates.push([x,y]);
+    }
+  }
+  for(let i=candidates.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [candidates[i],candidates[j]]=[candidates[j],candidates[i]];
+  }
+  const picked=[];
+  for(let i=0;i<candidates.length&&picked.length<count;i++){
+    const p=candidates[i];
+    if(!picked.some(q=>Math.hypot(q[0]-p[0],q[1]-p[1])<70)) picked.push(p);
+  }
+  while(picked.length<count) picked.push(candidates[picked.length%candidates.length]);
+  return picked.slice(0,count).map(([x,y])=>({x:16+(x/canvas.width)*68,y:26+(y/canvas.height)*38}));
+}
+const targets=makeTargets(TOTAL);
+
+function rand(min,max){return Math.random()*(max-min)+min}
+
+for(let i=1;i<=TOTAL;i++){
+  const btn=document.createElement('button');
+  btn.className='photo';
+  btn.setAttribute('aria-label','Open memory '+i);
+  btn.innerHTML=`<img src="photos/${String(i).padStart(2,'0')}.jpg" alt="Memory ${i}">`;
+  const item={
+    el:btn,
+    n:i,
+    seen:false,
+    baseX:rand(12,88),
+    baseY:rand(16,82),
+    ampX:rand(4,11),
+    ampY:rand(4,10),
+    speedX:rand(.24,.62),
+    speedY:rand(.18,.48),
+    phase:rand(0,Math.PI*2),
+    phase2:rand(0,Math.PI*2),
+    depth:rand(.82,1.28),
+    targetX:targets[i-1].x,
+    targetY:targets[i-1].y
+  };
+  btn.addEventListener('click',()=>openMemory(item));
+  cards.push(item);
+  field.appendChild(btn);
+}
+
+function progress(){return seen.size/TOTAL}
+
+function updateUI(){
+  meter.textContent=`${seen.size} / ${TOTAL}`;
+  app.classList.toggle('progressing',seen.size>0 && !finalReveal);
+  if(finalReveal){
+    hint.innerHTML='<b>Final reveal</b>Zoomed out, all 43 photos now form the giant letters T I N.';
+  }else if(seen.size===0){
+    hint.innerHTML='<b>Keep exploring</b>Tap the floating memories. As each one opens, the universe slowly moves the photos into place.';
+  }else{
+    hint.innerHTML=`<b>The letters are forming</b>${seen.size} of ${TOTAL} memories explored. The universe is slowly spelling Tin.`;
+  }
+}
+
+function openMemory(item){
+  if(!item.seen){
+    item.seen=true;
+    seen.add(item.n);
+    item.el.classList.add('seen');
+    updateUI();
+    if(seen.size===TOTAL){
+      setTimeout(revealFinal,700);
+    }
+  }
+  big.src=`photos/${String(item.n).padStart(2,'0')}.jpg`;
+  big.alt=`Memory ${item.n}`;
+  memoryTitle.textContent=`Memory ${item.n}`;
+  memoryText.textContent=lines[(item.n-1)%lines.length];
+  modal.classList.add('on');
+}
+
+document.getElementById('close').onclick=()=>modal.classList.remove('on');
+modal.onclick=e=>{if(e.target===modal)modal.classList.remove('on')};
+document.getElementById('start').onclick=()=>{openScreen.classList.add('hide');app.classList.add('on');updateUI()};
+document.getElementById('replay').onclick=()=>location.reload();
+document.getElementById('hidePanel').onclick=()=>{panelHidden=true;finalPanel.style.opacity='0';finalPanel.style.visibility='hidden';finalPanel.style.pointerEvents='none'};
+
+function revealFinal(){
+  if(finalReveal) return;
+  finalReveal=true;
+  app.classList.add('revealed');
+  field.classList.add('finalView');
+  updateUI();
+  if(panelHidden){
+    panelHidden=false;
+    finalPanel.style.opacity='';
+    finalPanel.style.visibility='';
+    finalPanel.style.pointerEvents='';
+  }
+}
+
+function animate(t){
+  const time=t/1000;
+  const mixFinal=finalReveal?1:progress()*.88;
+  cards.forEach((item,index)=>{
+    const chaosX=item.baseX + Math.sin(time*item.speedX+item.phase)*item.ampX + Math.cos(time*.33+item.phase2)*item.ampX*.35;
+    const chaosY=item.baseY + Math.cos(time*item.speedY+item.phase2)*item.ampY + Math.sin(time*.41+item.phase)*item.ampY*.22;
+    const mix=mixFinal;
+    const x=chaosX*(1-mix)+item.targetX*mix;
+    const y=chaosY*(1-mix)+item.targetY*mix;
+    const driftRot=Math.sin(time*.35+item.phase)*7*(1-mix);
+    const scale=((item.depth)+(Math.sin(time*.7+item.phase2)+1)*.08)*(1-mix*.32)+(mix*.9);
+    item.el.style.left=x+'%';
+    item.el.style.top=y+'%';
+    item.el.style.transform=`translate(-50%,-50%) scale(${scale}) rotate(${driftRot}deg)`;
+    item.el.style.zIndex=String(20+Math.round(scale*100)+(item.seen?100:0));
+    item.el.style.opacity=String(finalReveal?1:(.88+mix*.12));
+  });
+  requestAnimationFrame(animate);
+}
+updateUI();
+requestAnimationFrame(animate);
 </script>
 </body>
 </html>
