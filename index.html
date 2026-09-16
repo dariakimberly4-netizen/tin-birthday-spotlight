@@ -134,10 +134,10 @@ function animate(t){
     const chaosY=item.baseY+Math.cos(time*item.speedY+item.phase2)*item.ampY+Math.sin(time*.41+item.phase)*item.ampY*.22;
     const mix=mixFinal;const x=chaosX*(1-mix)+item.targetX*mix;const y=chaosY*(1-mix)+item.targetY*mix;const driftRot=Math.sin(time*.35+item.phase)*7*(1-mix);const scale=((item.depth)+(Math.sin(time*.7+item.phase2)+1)*.08)*(1-mix*.32)+(mix*.9);
     item.el.style.left=x+'%';item.el.style.top=y+'%';item.el.style.transform=`translate(-50%,-50%) scale(${scale}) rotate(${driftRot}deg)`;item.el.style.zIndex=String(20+Math.round(scale*100)+(item.seen?100:0));item.el.style.opacity=String(finalReveal?1:(.88+mix*.12));
-  });
-  requestAnimationFrame(animate);
+  });requestAnimationFrame(animate);
 }
 updateUI();requestAnimationFrame(animate);
 </script>
+<!-- force-pages-rebuild: 2026-09-17-0353 -->
 </body>
 </html>
